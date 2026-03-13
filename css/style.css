@@ -1404,7 +1404,7 @@ address .footerLinks{
   transition: color 0.3s ease-in-out;
 }
 .sidePannelSocial a:hover{
-  color: var(--Black);
+  color: var(--AccentColour);
 }
 
 .instaCard{
@@ -2140,3 +2140,200 @@ align-items: center;
 .industry-card:hover .sidePoleImg { background: url("../image/sidePoleWhite.png") no-repeat center; }
 .industry-card:hover .CarParkingImg { background: url("../image/CarParkingWhite.png") no-repeat center; }
 .industry-card:hover .ModularTensile { background: url("../image/ModernTensileWhite.png") no-repeat center; }
+
+
+/* ==========================================================================
+   Redesigned: Modern Footer Section
+   ========================================================================== */
+
+.modern-footer {
+  background-color: #0b1a2e; /* Deep, rich navy matching your primary branding */
+  color: #98afc5;
+  position: relative;
+  border-top: 4px solid var(--AccentColour);
+  padding-top: 75px;
+  padding-bottom: 25px;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+.modern-footer .footer-logo {
+  display: inline-block;
+  margin-bottom: 24px;
+  max-width: 220px;
+}
+
+.modern-footer .footer-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.modern-footer .footer-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 30px;
+  color: #a8c0d6;
+}
+
+/* Contact List Styling */
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.footer-contact-list .icon-box {
+  width: 38px;
+  height: 38px;
+  background: rgba(0, 180, 166, 0.12);
+  color: var(--AccentColour);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-contact-list li:hover .icon-box {
+  background: var(--AccentColour);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 180, 166, 0.3);
+}
+
+.footer-contact-list .text-box {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #b8d4f0;
+  margin-top: 2px;
+}
+
+.footer-contact-list .text-box a {
+  color: #b8d4f0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-list .text-box a:hover {
+  color: #fff;
+}
+
+/* Headings */
+.footer-heading {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.footer-heading-line {
+  width: 40px;
+  height: 3px;
+  background: var(--AccentColour);
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+
+/* Link Lists */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 14px;
+}
+
+.footer-links a {
+  color: #a8c0d6;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.footer-links a::before {
+  content: "\f105"; /* FontAwesome Right Angle */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: rgba(0, 180, 166, 0.5);
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+.footer-links a:hover::before {
+  color: var(--AccentColour);
+}
+
+/* Bottom Bar & Socials */
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.copyright-text {
+  font-size: 13.5px;
+  margin: 0;
+  color: #7d96af;
+}
+
+.copyright-text a {
+  color: var(--AccentColour);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.copyright-text a:hover {
+  color: #ffffff;
+}
+
+.footer-social-modern {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.footer-social-modern a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: #b8d4f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+.footer-social-modern a:hover {
+  background: var(--AccentColour);
+  border-color: var(--AccentColour);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 180, 166, 0.35);
+}
