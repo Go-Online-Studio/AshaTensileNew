@@ -1,0 +1,327 @@
+@media only screen and (min-width: 1920px) {
+}
+
+@media (max-width: 1399.98px) {
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1900px) {
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1280px) {
+}
+
+@media (max-width: 1199.98px) {
+  .headerAnimate .navbar-nav {
+    gap: 0;
+    background-color: #000000a8;
+    padding: 0 8px;
+  }
+
+  .nav-link {
+    padding: 8px 0px !important;
+  }
+}
+
+@media (max-width: 1086.98px) {
+}
+
+@media (min-width: 992px) {
+  /* Ensure all list groups are displayed on desktop */
+  .list-group {
+    display: block !important;
+  }
+  .megaHeding {
+    cursor: default; /* Remove pointer cursor for headings on desktop */
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-expand-lg .navbar-nav .dropdown-mega .dropdown-menu {
+    position: static;
+    width: 100%;
+  }
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .Banner .item .container {
+    top: 60%;
+    padding: 0 12px;
+  }
+  .megaHeding::after {
+    content: "\f107";
+    font-size: 14px;
+    margin-left: 4px;
+    line-height: 1;
+    font-weight: 900;
+    font-family: "Font Awesome 6 free";
+    border: none;
+  }
+  .galleryMega .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .megaHeding.active {
+    color: var(--blue);
+  }
+  .list-group .list-group-item:last-child {
+    padding-bottom: 10px;
+  }
+
+  .parallax-row,
+  .parallax-row2,
+  .parallax-row3,
+  .parallax-row4,
+  .parallax-row5,
+  .parallax-row6 {
+    height: auto;
+    background: none;
+  }
+
+  .imgBg {
+    background: none;
+  }
+  .bannerCard {
+    display: inline-block;
+  }
+  .ourCoreValues .container-fluid > .row {
+    row-gap: 24px;
+  }
+  .ourCoreValues .container-fluid > .row .col-lg-4:nth-child(1) {
+    order: 2;
+  }
+
+  .ourCoreValues .container-fluid > .row .col-lg-4:nth-child(2) {
+    order: 1;
+  }
+  .ourCoreValues .container-fluid > .row .col-lg-4:nth-child(3) {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  .mega-content .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .Banner .item1 {
+    background: url("../image/HomebannerMob1.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .Banner .item2 {
+    background: url("../image/HomebannerMob2.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .Banner .item3 {
+    background: url("../image/HomebannerMob3.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #accordionFlushExample1 .fourthH {
+    font-size: 18px;
+  }
+
+  header .container-fluid {
+    padding: 0px 35px;
+  }
+
+  .Footer .container-fluid > .row {
+    row-gap: 30px;
+  }
+
+  .PreferredPartnerCard .imgpart1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .PreferredPartnerCard .textPart1 {
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  .therdH {
+    font-size: 32px;
+  }
+
+  .Trusted {
+    background: none;
+  }
+  .bannerCard {
+    display: inline-block;
+    padding: 24px;
+    background: rgba(0, 91, 170, 0.4);
+  }
+  .bannerCard .display-3 {
+    font-size: 30px;
+  }
+
+  .contactBanner img {
+    max-height: unset;
+  }
+
+  .contactBanner img:not(img[class]) {
+    max-height: unset;
+    min-height: 500px;
+    object-fit: cover;
+  }
+
+  .contactBanner.SwimmingPoolPage0 img {
+    max-height: unset;
+    min-height: 500px;
+    object-fit: cover;
+    object-position: -180px;
+  }
+
+  .mainFormSection {
+    padding: 35px 15px 35px 15px;
+  }
+
+  .weatherSolutions.TensilePage0 .fifthH {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--primary);
+  }
+
+  @media only screen and (max-width: 767.98px) and (max-height: 650px) {
+    .desktopImg {
+      display: block !important;
+    }
+
+    .mobileImg {
+      display: none !important;
+    }
+  }
+
+  .grid-sizer,
+  .grid-item {
+    width: calc(50% - 24px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .generalComparisonsTable table {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .generalComparisonsTable th:first-of-type {
+    position: static;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .generalComparisonsTable.ProductDiscriptionPage0 th:first-of-type {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table.ResponsiveTable thead {
+    display: none;
+  }
+
+  table.ResponsiveTable tbody td {
+    display: block;
+  }
+
+  table.ResponsiveTable tbody tr td:first-child {
+    background: #666;
+    color: #fff;
+  }
+
+  table.ResponsiveTable tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: block;
+  }
+
+  .secH {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+  .gutter-sizer {
+    width: 0;
+  }
+
+  .navbar-brand {
+    margin-right: 15px;
+    width: 12rem;
+  }
+  .brandIllustrations .container-fluid > .row {
+    row-gap: 30px;
+  }
+  .Footer {
+    text-align: center;
+  }
+
+  .Footer .linkList {
+    display: table;
+    margin: auto;
+  }
+
+  .DroneShoot .owl-stage-outer {
+    padding-bottom: 70px;
+    overflow: visible !important;
+  }
+
+  .DroneShoot .owl-dots {
+    bottom: 4px;
+  }
+  .DroneShoot .owl-nav{
+    display: none;
+  }
+  .btntext {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .FAQ_section .col-lg-4 .sticky-top {
+    position: static !important;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .FAQ_section .col-lg-4 .btnCommon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .faq-wrap {
+    padding: 16px;
+  }
+  .faq-wrap .accordion-button {
+    padding: 16px 10px;
+    font-size: 15px;
+  }
+  .faq-wrap .accordion-body {
+    padding: 0 10px 16px 10px;
+  }
+}
+
+@media (max-width: 355px) {
+.DroneShoot .owl-dot span {
+
+  width: 55px;
+  height: 40px;
+}
+}

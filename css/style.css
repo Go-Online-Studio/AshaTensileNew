@@ -1,0 +1,2131 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("../fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Medium.woff2") format("woff2"),
+    url("../fonts/OpenSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Italic.woff2") format("woff2"),
+    url("../fonts/OpenSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-MediumItalic.woff2") format("woff2"),
+    url("../fonts/OpenSans-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBoldItalic.woff2") format("woff2"),
+    url("../fonts/OpenSans-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"),
+    url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --Black: #2a2a2a;
+  --textGrey: #5e6b7a;
+  --primary: #0f2744;
+  --secondary: #0f2744;
+  --HoverBlue: #1a5fa8;
+  --seeGreen: #007f75;
+  --BG-Light: #e8f4f3;
+  --AccentColour: #00b4a6;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  color: var(--Black);
+  font-family: "Open Sans", Helvetica, "Trebuchet MS", Arial, Verdana, Tahoma,
+    "DejaVu Sans", "Liberation sans", "Bitstream Vera Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+.container-fluid.header {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-fluid.custom {
+  max-width: 1200px;
+}
+
+.display-3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 52px;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.secH {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 46px;
+  margin-bottom: 30px;
+}
+
+.therdH {
+  font-size: 40px;
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 34px;
+}
+
+.fourthH {
+  font-size: 30px;
+  font-variant: var(--primary);
+  line-height: 1.5;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.fifthH {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.bodySmall {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+/* header css start */
+
+/* Initial header styling */
+#main-header {
+  transition: all 0.5s ease;
+  z-index: 1055;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.bg-light.headerAnimate{
+  background: linear-gradient(#0e23477e 20%, #0e21421c) !important;
+}
+
+
+/* Hidden when out of view */
+.sticky-header {
+  position: fixed;
+  top: -112.48px; /* Hidden initially */
+  width: 100%;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: top 0.5s ease; /* Slide down animation */
+  animation: slideDown 0.5s ease-in-out both;
+}
+
+.sticky-header .nav-link {
+  color: var(--primary);
+  text-shadow: none;
+}
+.sticky-header .navbar-nav .nav-link.active,
+.sticky-header .navbar-nav .show > .nav-link {
+  color: var(--primary);
+}
+
+.sticky-header .navbar-nav .nav-link.active:hover::before,
+.sticky-header .navbar-nav .nav-link:hover::before,.sticky-header .nav-link:focus::before {
+opacity: 0;
+}
+
+.sticky-header.homePage0 .navbar-brand img{
+display: none;
+
+}
+.sticky-header.homePage0 .navbar-brand{
+background: url('../image/ASHA\ TENSILE.png') no-repeat center;
+background-size: contain;
+}
+
+
+
+@keyframes slideDown {
+  0% {
+    position: fixed;
+    top: -112.48px;
+   
+  }
+  100% {
+    position: fixed;
+    top: 0;
+   
+  }
+}
+.headerAnimate {
+  animation: slideUp 0.5s ease-in-out both;
+}
+
+@keyframes slideUp {
+  0% {
+    top: 50.48px;
+    position: absolute;
+   
+  }
+  100% {
+    top: 0px;
+   
+  }
+}
+.sticky-header.visible {
+  top: 0; /* Slide into view */
+}
+
+.navbar-brand {
+  margin-right: 45px;
+  width: 184px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.navbar-brand img{
+  -webkit-filter: drop-shadow(0px 0px 4px #ffffff);
+  filter: drop-shadow(0px 0px 4px #ffffff);
+}
+.homePage0 .navbar-brand {
+  margin-right: 45px;
+  width: 166px;
+  background-color: #00000000;
+  border-radius: 8px;
+}
+
+.homePage0 .navbar-brand img{
+  -webkit-filter: none;
+  filter: none;
+}
+
+.dropdown-menu li {
+  width: 260px;
+  padding: 0 20px;
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.5em;
+  font-size: 12px;
+  vertical-align: middle;
+  display: inline-block;
+  content: "\f107";
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
+  border: none;
+}
+
+.navbar-toggler{
+  background-color: #ffffff81;
+}
+
+.navbar {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  max-width: 100%;
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  padding: 20px 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.dropdown-item {
+  padding: 15px 20px;
+  padding-right: 28px;
+  border-radius: 0;
+  border-bottom: none;
+  text-wrap: wrap;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 14px;
+  color: var(--Black);
+}
+.nav-link {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 18px 5px !important;
+  font-weight: 500;
+  line-height: 30px;
+  text-shadow: 2px 2px 4px #00000060;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .show > .nav-link:hover {
+  color: var(--primary);
+}
+.navbar-nav .nav-link{
+  position: relative;
+  isolation: isolate;
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  height: 80%;
+  width: 100%;
+  opacity: 0;
+  background-color: var(--seeGreen);
+  border-radius: 8px;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active:hover::before,
+.navbar-nav .nav-link:hover::before,.nav-link:focus::before {
+opacity: 1;
+}
+
+
+
+
+.navbar-nav {
+  gap: 20px;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--primary);
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: var(--secondary);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dropdown-mega .dropdown-menu[data-bs-popper] {
+  margin-top: -2px !important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-mega .dropdown-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar > .container-fluid {
+  position: relative;
+}
+
+.megaHeding {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--Black);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.megaDropdown:not(.galleryMega) .megaHeding {
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+.megaDropdown {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.233) !important;
+}
+
+.galleryMega .col-lg-4 {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.list-group .list-group-item {
+  border: none;
+  font-size: 14px;
+  padding: 2px;
+  padding-left: 0;
+  text-wrap: wrap;
+  font-weight: 600;
+}
+.list-group .list-group-item i {
+  color: var(--HoverBlue);
+  margin-right: 4px;
+  transition: 0.3s ease-in-out;
+}
+.list-group .list-group-item:hover i {
+  margin-right: 8px;
+}
+.list-group .list-group-item:hover {
+  color: var(--Black);
+}
+.list-group img {
+  width: 100%;
+  height: auto;
+}
+
+.list-group .list-group-item:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+
+/* header css end */
+
+/* banner css start  */
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  color: var(--lightGrey);
+}
+
+.Banner .item {
+  height: 100vh;
+  min-height: 344px;
+  position: relative;
+}
+.Banner .item .container {
+  position: absolute;
+  top: 60%;
+  padding: 0 0 0 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Banner .item1 {
+  background: url("../image/BannerImg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Banner .item2 {
+  background: url("../image/Sustainability-of-architectural-fabrics-hero-700x525.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Banner .item3 {
+  background: url("../image/Schools.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.subHead {
+  color: #fff;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: var(--AccentColour);
+  padding: 5px 14px;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+.Banner .display-3 {
+  text-transform: none;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.08;
+  text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+}
+.bannerCard {
+  padding: 40px 36px 40px 36px;
+  background: rgba(8,20,40,0.78);
+  border-left: 5px solid var(--AccentColour);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+}
+
+.LinkStyle {
+  transition: all 0.3s ease 0s;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  padding: 0.3125rem 0.3125rem 0.25rem 1.875rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.LinkStyle:before {
+  content: "";
+  height: 0.125rem;
+  width: 1.25rem;
+  background-color: #444;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+.LinkStyle span {
+  display: inline-block;
+  transform: translateX(0px);
+  transition: all 0.3s ease-in-out;
+}
+
+.LinkStyle:hover {
+  color: #000000;
+}
+
+.LinkStyle:hover:before {
+  transition-delay: 0.3s;
+  left: 0.625rem;
+  background-color: #000000;
+}
+
+.LinkStyle:hover span {
+  transform: translateX(0.625rem);
+}
+
+.Banner .LinkStyle {
+  color: #ffffff;
+}
+.Banner .LinkStyle:before {
+  background-color: #ffffff;
+}
+.Banner .LinkStyle:hover {
+  color: var(--lightGrey);
+}
+
+.Banner .LinkStyle:hover:before {
+  transition-delay: 0.3s;
+  left: 0.625rem;
+  background-color: var(--lightGrey);
+}
+
+.Banner .owl-nav {
+  position: absolute;
+  bottom: 48px;
+  display: flex;
+  left: 0;
+  right: 0;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.Banner .owl-nav button {
+  pointer-events: initial;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.308) !important;
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 50%;
+  z-index: 10;
+  border: 1px solid #d8d8d8 !important;
+}
+.Banner .owl-nav button:hover {
+  background-color: #ffffff !important;
+  color: var(--Black);
+}
+.Banner .owl-nav button span {
+  display: inline-block;
+  transform: translateY(-4px);
+}
+.Banner .owl-carousel .owl-nav button.owl-prev {
+  padding: 0 15px !important;
+  font-size: 22px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Banner .owl-carousel .owl-nav button.owl-next {
+  padding: 0 15px !important;
+  font-size: 22px;
+  transition: transform 0.3s ease-in-out;
+}
+.Banner {
+  position: relative;
+}
+
+/* banner css end */
+
+.defaultPadding {
+  padding: 70px 0;
+}
+
+/* trusted section start  */
+
+.Trusted .therdH {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.Trusted iframe {
+  margin-top: 38px;
+  aspect-ratio: 16/9;
+}
+
+.parallax-row {
+  height: 436px;
+  background: url("../image/HomePageSection1.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 center;
+}
+
+/* Weather Solutions section start */
+.weatherSolutions {
+  background: #f7f9fc;
+}
+.PreferredPartnerCard {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #d7f4c1;
+  margin-bottom: 40px;
+}
+
+.imgpart1 {
+  width: 25%;
+}
+.textPart1 {
+  width: 75%;
+  padding-left: 24px;
+}
+
+.hoverCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.hoverCard h4 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  font-family: "Open Sans";
+  padding: 14px 18px;
+  font-size: 14px;
+  background: var(--primary);
+  border-top: 3px solid var(--AccentColour);
+  text-shadow: none;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  text-transform: capitalize;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+}
+
+.hoverCard a {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.hoverCard img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  width: 100%;
+}
+
+.weatherSolutions .hoverCard img{
+  aspect-ratio: 7/5;
+  object-fit: cover;
+  object-position: center;
+}
+.hoverCard:hover h4 {
+  transform: translateY(0);
+}
+.hoverCard:hover img {
+  transform: scale(1.07);
+}
+
+.btnCommon {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  padding: 13px 28px;
+  border-radius: 4px;
+  background: var(--AccentColour);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 36px;
+  transition: all 0.28s ease;
+  border: 2px solid var(--AccentColour);
+  gap: 8px;
+}
+.btnCommon i {
+  font-size: 13px;
+}
+.btnCommon:hover {
+  background: transparent;
+  color: var(--AccentColour);
+}
+
+/* Weather Solutions section end */
+
+/* Shade Structures section start */
+.imgBg {
+  background: url("../image/Bulcock-Beach-Monaco-Sunset.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.textPart2 {
+  color: #c9d6e3;
+  padding-top: 7vh;
+  padding-right: 7vw;
+  padding-bottom: 7vh;
+  padding-left: 7vw;
+  background-color: #162840;
+}
+.textPart2 .therdH {
+  color: #fff;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 18px;
+}
+.textPart2 .therdH::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: calc(100% - 16px);
+  background: var(--AccentColour);
+  border-radius: 3px;
+}
+.imageHoverCard {
+  position: relative;
+}
+.imageHoverCard a {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.imageHoverCard .imgBox {
+  max-width: 65%;
+  aspect-ratio: 130/98;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  background-size: cover !important;
+}
+
+.StadiumImg {
+  background: url("../image/Stadium.png") no-repeat center;
+}
+
+.imageHoverCard:hover .StadiumImg {
+  background: url("../image/StadiumWhite.png") no-repeat
+    center;
+}
+
+.GazeboImg {
+  background: url("../image/Gazebo.png") no-repeat center;
+}
+
+.imageHoverCard:hover .GazeboImg {
+  background: url("../image/GazeboWhite.png") no-repeat
+    center;
+}
+.CenterPoleImg {
+  background: url("../image/CenterPole.png") no-repeat
+    center;
+}
+
+.imageHoverCard:hover .CenterPoleImg {
+  background: url("../image/CenterPoleWhite.png") no-repeat
+    center;
+}
+
+.FourPoleImg {
+  background: url("../image/FourPole.png") no-repeat center;
+}
+
+.imageHoverCard:hover .FourPoleImg {
+  background: url("../image/FourPoleWhite.png") no-repeat
+    center;
+}
+
+.ResortTentImg {
+  background: url("../image/ResortTent.png") no-repeat center;
+}
+
+.imageHoverCard:hover .ResortTentImg {
+  background: url("../image/ResortTentWhite.png") no-repeat
+    center;
+}
+
+.sidePoleImg {
+  background: url("../image/sidePole.png") no-repeat
+    center;
+}
+
+.imageHoverCard:hover .sidePoleImg {
+  background: url("../image/sidePoleWhite.png")
+    no-repeat center;
+}
+
+.CarParkingImg {
+  background: url("../image/CarParking.png") no-repeat center;
+}
+
+.imageHoverCard:hover .CarParkingImg {
+  background: url("../image/CarParkingWhite.png") no-repeat
+    center;
+}
+
+.ModularTensile {
+  background: url("../image/ModernTensile.png") no-repeat center;
+}
+
+.imageHoverCard:hover .ModularTensile {
+  background: url("../image/ModernTensileWhite.png") no-repeat
+    center;
+}
+
+.yellowBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  padding: 13px 28px;
+  border-radius: 4px;
+  background: var(--primary);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 36px;
+  transition: all 0.28s ease;
+  border: 2px solid var(--primary);
+}
+.yellowBtn i {
+  font-size: 13px;
+}
+.yellowBtn:hover {
+  background: transparent;
+  color: var(--primary);
+}
+.ShadeStructures .yellowBtn {
+  margin-top: 30px;
+}
+/* Shade Structures section end */
+
+.rowDirection {
+  flex-direction: row-reverse;
+}
+
+.rowDirection .textPart2 {
+  background-color: transparent;
+}
+
+.rowDirection .imgBg {
+  background: url("../image/Tensile-home.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rowDirection .textPart2 {
+  color: #707070;
+  background-color: #f3f3f3;
+}
+
+.rowDirection .textPart2 .therdH {
+  color: var(--primary);
+}
+
+/* Articles & Stories start */
+
+.hoverCard2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.hoverCard2 a {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.hoverCard2 img {
+  transition: all ease 0.3s;
+}
+
+.articalCard:hover img {
+  transform: scale(1.05);
+}
+.simpleAnchor {
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.articalCard span {
+  color: #262626;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.articalCard span i {
+  margin-right: 8px;
+}
+
+.articalCard .fifthH {
+  color: var(--primary);
+  margin-top: 20px;
+  min-height: 75px;
+}
+.articalCard .fifthH a {
+  color: var(--primary);
+}
+
+/* Articles & Stories end */
+
+.parallax-row2 {
+  height: 436px;
+  background: url("../image/HomePageSection2.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 center;
+}
+
+/* Drone Shoot section */
+.DroneShoot {
+  background: var(--primary);
+  position: relative;
+}
+.DroneShoot .therdH {
+  color: #ffffff;
+}
+.DroneShoot > .container-fluid > p {
+  color: #98afc5;
+  margin-bottom: 32px;
+}
+
+.DroneShoot button span {
+  color: white;
+}
+
+.DroneShoot .video-item {
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.DroneShoot .video-item iframe {
+  aspect-ratio: 16/9;
+  display: block;
+  width: 100%;
+  transition: opacity 0.4s ease;
+}
+
+/* ─── Carousel layout ─── */
+.DroneShoot .owl-carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.DroneShoot .owl-stage-outer {
+  padding: 0;
+  overflow: hidden !important;
+}
+
+.DroneShoot .owl-item {
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.DroneShoot .owl-item.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 5;
+}
+
+/* ─── Navigation arrows ─── */
+.DroneShoot .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 16px;
+}
+
+.DroneShoot .owl-nav button {
+  pointer-events: all;
+  width: 48px;
+  height: 48px;
+  background: rgba(0,180,166,0.85) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  transition: background 0.25s ease;
+}
+.DroneShoot .owl-nav button:hover {
+  background: var(--AccentColour) !important;
+}
+.DroneShoot .owl-nav button span {
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(-1px);
+  display: inline-block;
+}
+
+.owl-nav .owl-prev {
+  margin-left: 0;
+}
+.DroneShoot .owl-nav .owl-next {
+  margin-right: 0;
+}
+
+/* ─── Dot thumbnails as bottom row strip ─── */
+.DroneShoot .owl-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  pointer-events: all;
+  position: static;
+}
+
+.DroneShoot .owl-dot {
+  position: relative;
+}
+
+.DroneShoot .owl-dot span {
+  display: block;
+  width: 80px;
+  max-width: 80px;
+  height: 52px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  pointer-events: all;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.DroneShoot .owl-dot span:hover {
+  border-color: var(--AccentColour);
+  transform: translateY(-3px);
+}
+
+.DroneShoot .owl-dot.active span {
+  border-color: var(--AccentColour);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,180,166,0.35);
+}
+
+.DroneShoot .owl-dot:nth-child(1) span {
+  background: url('../image/Helensvale-Media-Thumbnail.jpg') center no-repeat;
+  background-size: cover;
+}
+.DroneShoot .owl-dot:nth-child(2) span {
+  background: url('../image/Glendale-Marketplace-Media-Thumbnail.jpg') center no-repeat;
+  background-size: cover;
+}
+.DroneShoot .owl-dot:nth-child(3) span {
+  background: url('../image/Sydney-Football-Stadium-Media-Thumbnail.jpg') center no-repeat;
+  background-size: cover;
+}
+.DroneShoot .owl-dot:nth-child(4) span {
+  background: url('../image/Schools.webp') center no-repeat;
+  background-size: cover;
+}
+.DroneShoot .owl-dot:nth-child(5) span {
+  background: url('../image/videoThumb5th.webp') center no-repeat;
+  background-size: cover;
+}
+
+/* Drone Shoot section end */
+
+
+/* FAQ section start */
+.FAQ_section {
+  background: #f7f9fc;
+  position: relative;
+}
+.faq-wrap {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(15, 39, 68, 0.05);
+  padding: 24px;
+}
+.faq-wrap .accordion {
+  --bs-accordion-border-width: 0;
+  --bs-accordion-bg: transparent;
+}
+.faq-wrap .accordion-item {
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  margin-bottom: 0;
+}
+.faq-wrap .accordion-item:last-child {
+  border-bottom: none;
+}
+.faq-wrap .accordion-button {
+  padding: 20px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  background: transparent;
+  box-shadow: none;
+}
+.faq-wrap .accordion-button:not(.collapsed) {
+  color: var(--AccentColour);
+  background: transparent;
+  box-shadow: none;
+}
+.faq-wrap .accordion-button::after {
+  content: '\f067';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  background-image: none;
+  font-size: 16px;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.faq-wrap .accordion-button:not(.collapsed)::after {
+  content: '\f068';
+  transform: rotate(180deg);
+  color: var(--AccentColour);
+}
+.faq-wrap .accordion-body {
+  padding: 0 16px 20px 16px;
+  color: var(--textGrey);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+/* FAQ section End */
+
+
+/* footer section start  */
+.Footer{
+  background-color: #1d1d1d;
+  padding-bottom: 20px;
+}
+.Footer.customContainer .container-fluid.custom {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Footer .brandImg{
+  display: inline-block;
+  width: 184px;
+  margin-bottom: 24px;
+}
+.footerLinks{
+  display: block;
+  color: #b8b7b7;
+  margin: 4px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+address .footerLinks{
+  margin-top: 30px;
+}
+
+.footer-social a{
+  font-size: 30px;
+  margin-right: 8px;
+  color: #b8b7b7;
+  transition: all 0.3s ease-in-out;
+}
+.footer-social a:hover,.footerLinks:hover{
+  color: #ffffff;
+}
+.Footer .fifthH{
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.linkList {
+  border: none;
+  display: block;
+  color: #b8b7b7;
+  position: relative;
+  padding: 2px;
+  padding-left: 16px;
+  text-wrap: wrap;
+  font-weight: 600;
+  transition:  padding-left 0.3s ease-in-out;
+}
+
+.linkList i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: #acacac;
+  margin-right: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+.linkList:hover {
+  padding-left: 20px;
+  color: #ffffff;
+}
+
+.copyright {
+  margin-top: 20px !important;
+  padding-top: 36px;
+  border-top: 1px solid var(--textGrey);
+}
+/* footer section end */
+
+
+
+/* ---------------- */
+/* Product Page*/
+/* ---------------- */
+
+.productPage0.Trusted{
+  background: none;
+}
+.productPage0.Trusted .secH{
+  text-align: center;
+  color: var(--secondary);
+}
+
+.parallax-row3 {
+  height: 436px;
+  background: url("../image/ProductRangeSection.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 center;
+}
+
+.productPage0.Trusted .fifthH{
+  margin-top: 12px;
+}
+.productPage0.Trusted .fifthH a{
+  color: var(--primary);
+}
+.productPage0.Trusted hr{
+  opacity: 1;
+  color: var(--secondary);
+}
+
+
+.productPage0.Trusted .linkList {
+  color: var(--Black);
+}
+
+.productPage0.Trusted .linkList i {
+  color: var(--primary);
+}
+
+.productPage0.Trusted .linkList:hover {
+  padding-left: 20px;
+  color: var(--primary);
+}
+
+
+.contactBanner img{
+  max-height: 550px;
+  object-fit: cover;
+}
+
+
+
+/* ---------------- */
+/* Contact Page*/
+/* ---------------- */
+
+.contactFormMenu .container-fluid.custom{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactFormMenu .secH{
+  text-align: center;
+}
+
+
+.sidePannel{
+  padding: 36px 20px;
+  background-color: var(--primary);
+  border-top: 5px solid var(--AccentColour);
+}
+
+.sidePannel .colBrand{
+  display: inline-block;
+  padding: 0 10px;
+  margin-bottom: 4px;
+}
+
+.sideLinks{
+  margin-top: 20px;
+  list-style: none;
+}
+
+.sideLinks a{
+  position: relative;
+  font-size: 13px;
+  padding-left: 26px;
+  font-weight: 600;
+  color: #b0c8df;
+  transition: color 0.25s ease;
+  line-height: 1.6;
+}
+
+.sideLinks a i{
+  color: var(--AccentColour);
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.sideLinks a:hover{
+  color: #ffffff;
+}
+
+.sidePannelSocial{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+  padding-left: 32px;
+}
+
+.sidePannelSocial a{
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+  font-size: 20px;
+  background-color: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--primary);
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
+}
+.sidePannelSocial a:hover{
+  color: var(--Black);
+}
+
+.instaCard{
+position: relative;
+margin: 20px 0;
+color: #ffffff;
+transition: color 0.3s ease-in-out;
+}
+
+.instaCard img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.instaCard:hover{
+  color: var(--Black);
+}
+
+.instaCard a{
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.overLay{
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+color: #ffffff;
+font-size: 24px;
+border-radius: 50%;
+height: 100%;
+width: 100%;
+background-color: #000000c0;
+transition: opacity  0.3s ease-in-out;
+}
+
+.instaCard:hover .overLay{
+  opacity: 1;
+}
+
+.imgwrap{
+  position: relative;
+  overflow: hidden;
+}
+
+
+.galleryType{
+  row-gap: 24px;
+}
+.cardImage{
+  position: relative;
+}
+
+.cardImage img{
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.cardImage a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #ffffff2d;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cardImage:hover a{
+  opacity: 1;
+}
+
+.buttonsWrap{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 8px 8px;
+align-items: center;
+}
+
+
+
+.socialBtn {
+  display: inline-block;
+  padding: 7px 14px;
+  background: #333;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 16px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  transition: all 0.1s ease-in;
+}
+
+.socialBtn i {
+  margin-left: 8px;
+}
+
+.socialBtn:hover {
+  color: #fff;
+}
+
+.socialBtn:hover{
+  box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.25);
+}
+
+.socialBtn.Bluesocial{
+  background-color: var(--primary);
+}
+
+.mainFormSection{
+  padding: 40px 24px 40px 32px;
+  border-left: 5px solid var(--AccentColour);
+  background: #fff;
+}
+
+.contactFormMenu .container-fluid>.row{
+  background-color: #f0f5fa;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mainFormSection .fourthH{
+   padding-bottom: 18px;
+   margin-bottom: 28px;
+   border-bottom: 2px solid var(--AccentColour);
+}
+
+.mainFormSection .red{
+  color: red;
+}
+
+.mainFormSection .bodySmall{
+  margin-bottom: 0;
+  line-height: 1.75;
+}
+
+#contactForm {
+  font-size: 14px;
+}
+
+
+#contactForm button{
+  background-color: var(--AccentColour);
+  border: 2px solid var(--AccentColour);
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.28s ease;
+  padding: 14px;
+}
+#contactForm button:hover{
+  background-color: transparent;
+  color: var(--AccentColour);
+}
+
+#contactForm textarea{
+  resize: none;
+}
+
+#contactForm input,#contactForm select{
+  font-size: 15px;
+  border-radius: 0;
+  padding: 8px;
+  border: 1px solid #DADADA !important
+}
+
+#contactForm input,#contactForm select option{
+  font-size: 15px;
+}
+
+
+/* brand illustrations start */
+.brandIllustrations .container-fluid.custom{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonSection{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.buttonSection>div{
+  padding: 0 10%;
+}
+
+.buttonSection .btnCommon{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  background-color: var(--HoverBlue);
+}
+.buttonSection .btnCommon:hover{
+  background-color: var(--seeGreen);
+}
+
+.buttonSection .btnCommon i{
+  margin: 0;
+  margin-top:   4px;
+  margin-right: 8px;
+}
+
+/* brand illustrations end */
+
+
+/* ----------------------- */
+/* Product Description Page*/
+/* ----------------------- */
+
+/* product description section start */
+
+
+.container-fluid.Maximum {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iconLeftBtn{
+  color: #fff;
+  padding: 16px 25px;
+  border-radius: 5px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.1)
+    );
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal; /* 175% */
+  text-transform: capitalize;
+  margin-top: 36px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  width: max-content;
+  background-color: var(--HoverBlue);
+}
+.iconLeftBtn:hover{
+  color: var(--Black);
+  background-color: var(--secondary);
+}
+
+.iconLeftBtn i{
+  margin: 0;
+  margin-top: 4px;
+  margin-right: 8px;
+}
+
+
+/* product description section end */
+
+
+
+
+/* -------------- */
+/* About Us Page*/
+/* ------------- */
+
+ /* who we are  section start */
+.our___cards{
+  height: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px 2px #00000017;
+  transition: box-shadow 0.3s ease-in-out;
+  padding: 30px;
+}
+
+.our___cards:hover{
+  box-shadow: 2px 2px 20px 2px #0000002c;
+}
+.ourCoreValues ul li strong{
+  font-size: 18px;
+}
+/* who we are  section end */
+
+
+/* Why Choose Us section start */
+
+.Expertise{
+  margin: auto;
+  margin-bottom: 24px;
+}
+
+
+/* Why Choose Us section end */
+
+.parallax-row4 {
+  height: 436px;
+  background: url("../image/About_Image/AboutSection.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 center;
+}
+
+
+/* Our Services section start */
+.ourServices .fourthH{
+  color: var(--primary);
+}
+
+/* Our Services section end */
+
+
+/* ------------- */
+/* Services Page*/
+/* ------------ */
+
+.ourServiceProcedure .serviceBox{
+  text-align: center;
+  padding: 20px;
+}
+
+.ourServiceProcedure .serviceIcons{
+
+  width: 100px;
+  margin: auto;
+  margin-bottom: 24px;
+}
+
+.ourServiceProcedure .fifthH{
+  color: var(--HoverBlue);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+
+/* ------------- */
+/* Services Page*/
+/* ------------ */
+
+
+/* Tensile Membrane Structures section start */
+
+.weatherSolutions.TensilePage0 .fifthH{
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--primary);
+} 
+/* Tensile Membrane Structures section end */
+
+
+.parallax-row5 {
+  height: 436px;
+  background: url("../image/TensileStructure/Macquarie-uni-parallax.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 center;
+}
+.parallax-row6 {
+  height: 436px;
+  background: url("../image/architecturalMembraneSection.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 center;
+}
+
+.architecturalMembraneIntroductionPage0.Trusted ol li::marker {
+ font-weight: 800;
+}
+
+/* All Types of Tensile Fabric table section start */
+
+.generalComparisonsTable table {
+  border-collapse: collapse;
+  min-width: 1150px;
+  color: #000000;
+  position: relative;
+  width: 100%;
+}
+.generalComparisonsTable .tableWrapper {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 200px); /* Limit table height */
+  min-height: 344px ; /* Minimum height */
+  border: 1px solid #ddd; /* Optional: Adds a visible border for clarity */
+}
+
+.generalComparisonsTable th, 
+.generalComparisonsTable td {
+  text-align: left;
+  vertical-align: text-top;
+  padding: 8px;
+}
+
+.generalComparisonsTable th {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.generalComparisonsTable th:first-of-type {
+  position: sticky;
+  left: 0;
+  background-color: var(--primary); /* Ensures left column stays consistent */
+  z-index: 2; /* Makes the first column appear above other content */
+}
+
+.generalComparisonsTable .fst_Table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  z-index: 3; /* Ensures the header row appears above everything else */
+}
+
+.generalComparisonsTable .fst_Table .fst_TH {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--primary); /* Ensures the top-left corner stays consistent */
+  z-index: 4; /* Highest z-index to prevent conflicts */
+}
+
+.generalComparisonsTable tr:nth-child(even) {
+  background-color: #d0e0ee;
+}
+
+/* All Types of Tensile Fabric table section end */
+
+
+.generalComparisonsTable.ProductDiscriptionPage0  th:first-of-type{
+  max-width: 270px;
+  min-width: 110px;
+}
+
+.generalComparisonsTable .tableWrapper.smallTable  {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: unset; /* Limit table height */
+  min-height: unset; /* Minimum height */
+  border: 1px solid #ddd; /* Optional: Adds a visible border for clarity */
+}
+
+
+
+
+/**************************
+***Gallery category Page***  
+***************************/
+
+
+
+
+/* gallery categories  */
+.galleryCategories {
+  overflow: hidden;
+}
+
+.grid-item {
+   aspect-ratio: 24/16;
+   object-fit: cover;
+   margin-bottom: 24px;
+  }
+  .grid-item img{
+    aspect-ratio: 24/16;
+    object-fit: cover;
+  }
+
+  .grid-sizer,.grid-item{
+    width: calc(33.333333% - 24px);                                                                              ;
+  }
+
+.gutter-sizer { 
+  width: 24px;
+}
+
+.grid-item--height2 {
+  aspect-ratio: 12/18;
+  object-fit: cover;
+}
+
+.grid-item--height2 img{
+  aspect-ratio: 12/18;
+  object-fit: cover;
+}
+
+.spl-footer{
+  display: none;
+}
+
+.blankSpace{
+  height: 88px;
+  background-color: var(--HoverBlue);
+}
+
+
+/* -------------------------------- */
+/* Information / CTA Section */
+/* -------------------------------- */
+.informationSection {
+  background: linear-gradient(120deg, var(--primary) 0%, #0b3360 50%, #0a3d4e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.informationSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(0,180,166,0.04) 0px,
+    rgba(0,180,166,0.04) 1px,
+    transparent 1px,
+    transparent 22px
+  );
+  pointer-events: none;
+}
+.informationSection .therdH,
+.informationSection .fourthH {
+  color: #ffffff;
+}
+.informationSection p {
+  color: #a8c0d6;
+}
+.informationSection .btnCommon {
+  background: var(--AccentColour);
+  border-color: var(--AccentColour);
+  color: #fff;
+}
+.informationSection .btnCommon:hover {
+  background: transparent;
+  color: var(--AccentColour);
+}
+
+
+/* -------------------------------- */
+/* Product Page – Card Grid */
+/* -------------------------------- */
+.productGrid .productCard-inner {
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(15,39,68,0.08);
+  border-top: 4px solid var(--AccentColour);
+  padding: 0 0 16px 0;
+  height: 100%;
+  transition: box-shadow 0.3s ease, transform 0.28s ease;
+  overflow: hidden;
+}
+.productGrid .productCard-inner:hover {
+  box-shadow: 0 10px 36px rgba(15,39,68,0.16);
+  transform: translateY(-5px);
+}
+.productGrid .productCard-inner > a:first-child img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 14px;
+  transition: transform 0.4s ease;
+}
+.productGrid .productCard-inner:hover > a:first-child img {
+  transform: scale(1.04);
+}
+.productGrid .productCard-inner .fifthH {
+  padding: 0 16px;
+  margin-bottom: 6px;
+}
+.productGrid .productCard-inner .fifthH a {
+  color: var(--primary);
+}
+.productGrid .productCard-inner hr {
+  margin: 6px 16px 10px;
+  border-color: var(--AccentColour);
+  opacity: 0.5;
+}
+.productGrid .productCard-inner .linkList {
+  padding-left: 22px;
+  padding-right: 8px;
+  color: var(--Black);
+  font-size: 13px;
+}
+.productGrid .productCard-inner .linkList i {
+  color: var(--AccentColour);
+}
+.productGrid .productCard-inner .linkList:hover {
+  color: var(--primary);
+  padding-left: 26px;
+}
+
+
+/* -------------------------------- */
+/* Contact instaCard dark-panel */
+/* -------------------------------- */
+.instaCard {
+  color: #bdd0e0;
+}
+.instaCard:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Redesigned: Tensile Structures for All Industries Section
+   ========================================================================== */
+
+.redesigned-shade-section {
+  background: linear-gradient(135deg, #f7f9fc 0%, #e8f4f3 100%);
+  position: relative;
+}
+
+/* Card Styling */
+.industry-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 20px 25px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(15, 39, 68, 0.04);
+  border: 1px solid rgba(0, 180, 166, 0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Card Hover Effect */
+.industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(15, 39, 68, 0.1);
+  border-color: var(--AccentColour);
+}
+
+.industry-card .full-link {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10;
+}
+
+/* Circular Icon Wrapper */
+.industry-card .icon-wrapper {
+  width: 85px;
+  height: 85px;
+  background: #eef5f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.industry-card:hover .icon-wrapper {
+  background: var(--primary); /* Flips to dark blue */
+  transform: scale(1.05);
+}
+
+/* Fix for existing Image Boxes inside the new circle */
+.industry-card .imgBox {
+  width: 45px;
+  height: 45px;
+  background-size: contain !important;
+  margin: 0; 
+}
+
+/* Typography Update */
+.industry-card .industry-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+  font-family: "Open Sans", sans-serif;
+}
+
+.industry-card:hover .industry-title {
+  color: var(--AccentColour);
+}
+
+/* Action Arrow that slides in on hover */
+.industry-card .card-arrow {
+  margin-top: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--textGrey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+.industry-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  background: var(--AccentColour);
+  color: #fff;
+}
+
+/* Re-mapping your existing images to change to white on hover 
+  inside the newly designed cards 
+*/
+.industry-card:hover .StadiumImg { background: url("../image/StadiumWhite.png") no-repeat center; }
+.industry-card:hover .GazeboImg { background: url("../image/GazeboWhite.png") no-repeat center; }
+.industry-card:hover .CenterPoleImg { background: url("../image/CenterPoleWhite.png") no-repeat center; }
+.industry-card:hover .FourPoleImg { background: url("../image/FourPoleWhite.png") no-repeat center; }
+.industry-card:hover .ResortTentImg { background: url("../image/ResortTentWhite.png") no-repeat center; }
+.industry-card:hover .sidePoleImg { background: url("../image/sidePoleWhite.png") no-repeat center; }
+.industry-card:hover .CarParkingImg { background: url("../image/CarParkingWhite.png") no-repeat center; }
+.industry-card:hover .ModularTensile { background: url("../image/ModernTensileWhite.png") no-repeat center; }
