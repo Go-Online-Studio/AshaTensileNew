@@ -889,6 +889,10 @@ opacity: 1;
   background: transparent;
   color: var(--primary);
 }
+.DroneShoot .yellowBtn:hover {
+  background: transparent;
+  color: var(--AccentColour);
+}
 .ShadeStructures .yellowBtn {
   margin-top: 30px;
 }
@@ -1663,7 +1667,7 @@ align-items: center;
 }
 .iconLeftBtn:hover{
   color: var(--Black);
-  background-color: var(--secondary);
+  background-color: var(--AccentColour);
 }
 
 .iconLeftBtn i{
