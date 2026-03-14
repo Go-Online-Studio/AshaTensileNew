@@ -1,3 +1,14 @@
+:root {
+  --Black: #2a2a2a;
+  --textGrey: #5e6b7a;
+  --primary: #0f2744;
+  --secondary: #0f2744;
+  --HoverBlue: #1a5fa8;
+  --seeGreen: #007f75;
+  --BG-Light: #e8f4f3;
+  --AccentColour: #00b4a6;
+}
+
 @media only screen and (min-width: 1920px) {
 }
 
@@ -13,7 +24,7 @@
 @media (max-width: 1199.98px) {
   .headerAnimate .navbar-nav {
     gap: 0;
-    background-color: #000000a8;
+    background-color: #000000b9;
     padding: 0 8px;
   }
 
@@ -22,7 +33,32 @@
   }
 }
 
-@media (max-width: 1086.98px) {
+@media (max-width: 1024.98px) {
+
+.slider1{
+  background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob1.webp') center / cover no-repeat;
+}
+.slider2{
+  background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob2.webp') center / cover no-repeat;
+}
+.slider3{
+  background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob3.webp') center / cover no-repeat;
+}
+
+}
+
+@media screen and (device-width: 1024px) and (device-height: 600px) and (orientation: landscape) {
+  /* Styles for Google Nest Hub in landscape */
+  .slider1{
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImg.webp') center / cover no-repeat;
+  }
+  .slider2{
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Sustainability-of-architectural-fabrics-hero-700x525.webp') center / cover no-repeat;
+  }
+  .slider3{
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Schools.webp') center / cover no-repeat;
+  }
+
 }
 
 @media (min-width: 992px) {
@@ -44,10 +80,6 @@
     width: 100%;
   }
 
-  .Banner .item .container {
-    top: 60%;
-    padding: 0 12px;
-  }
   .megaHeding::after {
     content: "\f107";
     font-size: 14px;
@@ -82,9 +114,7 @@
   .imgBg {
     background: none;
   }
-  .bannerCard {
-    display: inline-block;
-  }
+ 
   .ourCoreValues .container-fluid > .row {
     row-gap: 24px;
   }
@@ -98,6 +128,91 @@
   .ourCoreValues .container-fluid > .row .col-lg-4:nth-child(3) {
     order: 3;
   }
+
+   .navbar-toggler {
+		 display: block;
+	}
+	 .navbar-nav {
+		 background: #000000a8;
+		 flex-direction: column;
+     justify-content:start;
+		 z-index: 99999;
+		 padding: 0 20px;
+		 opacity: 0;
+		 transition: 400ms ease;
+		/* Sidebar */
+		 position: fixed;
+		 left: -300px;
+		 top: 0;
+		 width: 300px;
+		 height: 100%;
+		 overflow-y: auto;
+		 transform: translateX(-300px);
+	}
+   .sticky-header .navbar-nav{
+    background: #fff;
+  }
+   .navbar {
+	 padding: 8px 12px;
+}
+	 .navbar-nav .nav-link {
+		 margin: 10px 0;
+		 color: #ffffff;
+		 display: flex;
+		 align-items: center;
+     justify-content: space-between;
+	}
+	 .sticky-header .navbar-nav .nav-link {
+		 color: var(--primary);
+	}
+	 .navbar-nav > .nav-item:first-child {
+		 margin-top: 20px;
+	}
+	 .navbar-nav > .nav-item:last-child {
+		 margin-bottom: 20px;
+	}
+	 .navbar-nav .nav-item:not(:last-child) {
+		 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	 .navbar-nav .nav-item:hover > .nav-link {
+		 color: var(--AccentColour);
+	}
+
+	 .navbar-nav .nav-close {
+		 display: block;
+	}
+	 .navbar-nav.active {
+		 max-height: initial;
+		 opacity: 1;
+		 transform: translateX(0);
+		 left: 0;
+		 box-shadow: 0px 0px 0 10000px rgba(0, 0, 0, 0.5);
+	}
+	 .nav-item .dropdown {
+		 padding: 0;
+		 position: initial;
+		 max-height: 0;
+		 width: initial;
+		 border: none;
+		 box-shadow: none;
+	}
+	 .nav-item .dropdown .dropdown {
+		 border: none;
+	}
+	 .nav-item .dropdown:before {
+		 display: none;
+	}
+	 .nav-item:hover > .dropdown {
+		 opacity: 1;
+		 visibility: visible;
+		 transform: translateY(0px);
+		 max-height: initial;
+	}
+	 .nav-item.icon a svg {
+		 top: unset;
+		 right: 0;
+		 transform: translateY(0px);
+	}
 }
 
 @media screen and (max-width: 912px) {
@@ -107,32 +222,12 @@
 }
 
 @media (max-width: 767.98px) {
-  .Banner .item1 {
-    background: url("../image/HomebannerMob1.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .Banner .item2 {
-    background: url("../image/HomebannerMob2.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .Banner .item3 {
-    background: url("../image/HomebannerMob3.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   #accordionFlushExample1 .fourthH {
     font-size: 18px;
   }
 
   header .container-fluid {
-    padding: 0px 35px;
+    padding: 0px 0px;
   }
 
   .Footer .container-fluid > .row {
@@ -155,14 +250,7 @@
   .Trusted {
     background: none;
   }
-  .bannerCard {
-    display: inline-block;
-    padding: 24px;
-    background: rgba(0, 91, 170, 0.4);
-  }
-  .bannerCard .display-3 {
-    font-size: 30px;
-  }
+
 
   .contactBanner img {
     max-height: unset;
@@ -264,7 +352,6 @@
 
   .navbar-brand {
     margin-right: 15px;
-    width: 12rem;
   }
   .brandIllustrations .container-fluid > .row {
     row-gap: 30px;
@@ -291,6 +378,12 @@
   }
   .btntext {
     font-size: 12px;
+  }
+  .swiper-button-next{
+    display: none !important;
+  }
+  .swiper-button-prev{
+    display: none !important;
   }
 }
 
@@ -327,5 +420,27 @@
 
   width: 55px;
   height: 40px;
+}
+}
+
+@media only screen and (max-height: 539.98px) {
+   .mySwiper {
+      min-height: 600px;
+    }
+}
+
+@media only screen and (max-height: 539.98px) and (max-width: 1024px) {
+.mySwiper {
+      min-height: 600px;
+    }
+
+.slider1{
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImg.webp') center / cover no-repeat;
+}
+.slider2{
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Sustainability-of-architectural-fabrics-hero-700x525.webp') center / cover no-repeat;
+}
+.slider3{
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Schools.webp') center / cover no-repeat;
 }
 }

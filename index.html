@@ -37,8 +37,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
     <link rel="preload" as="style" href="css/style.css" />
     <link rel="preload" as="style" href="css/responsive.css" />
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -81,126 +81,75 @@
   </head>
 
   <body>
-    <header>
-      <nav id="main-header" class="navbar navbar-expand-xl bg-light py-3 homePage0">
-        <div class="container-fluid header">
-          <a class="navbar-brand" href="index.html">
-            <img  src="image/White_ASHA TENSILE.png" alt="Brand Logo" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="product.html">Product Range</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="architecturalMembraneIntroduction .html"
-                  >Architectural Membrane Introduction
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Company Profile
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="aboutUS.html">About Us</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="services.html">Services</a>
-                  </li>
-                </ul>
-              </li>
-           
-              <li class="nav-item">
-                <a class="nav-link" href="gallery.html">Gallery</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="contactUs.html">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div id="header-container"></div>
 
     <!-- banner start -->
-    <section id="headBelowContent" class="Banner">
-      <div class="comtainer-fluid text-white">
-        <div id="ca1" class="owl-carousel owl-theme">
-          <div class="item item1">
-            <div class="container">
-              <div
-                class="bannerCard col-xxl-4 col-xl-6 col-lg-7 animate__animated animate__delay-1s"
-              >
-                <span class="subHead">Welcome to</span>
-                <h1 class="display-3">Asha Tensile<br />Structures</h1>
+    <section class="swiper mySwiper"  id="headBelowContent">
+
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide slider1">
+            <div class="container slide-content">
+              <div class="row">
+                <div class="col-xl-6 col-lg-7">
+                <div class="banner2text">
+                  <span class="subHead">Welcome to</span>
+                <h1 class="display-3">Asha Tensile Structures</h1>
                 <p style="color:#c8d8e8;font-size:15px;margin:0;">Innovative fabric architecture, built to inspire.</p>
-              </div>
+                </div>
+                </div>
+              </div>  
+            </div>  
             </div>
-          </div>
-          <div class="item item2">
-            <div class="container">
-              <div
-                class="bannerCard col-xxl-4 col-xl-6 col-lg-7 animate__animated animate__delay-1s"
-              >
+            <!-- Slide 2 -->
+            <div class="swiper-slide slider2">
+            <div class="container slide-content">
+              <div class="row">
+                <div class="col-xl-6 col-lg-7">
+                <div class="banner2text">
                 <span class="subHead">Innovative Design</span>
-                <h1 class="display-3">Architect<br />Your Vision</h1>
+                <h1 class="display-3">Architect Your Vision</h1>
                 <p style="color:#c8d8e8;font-size:15px;margin:0;">Premium tensile membranes crafted for every space.</p>
-              </div>
+                </div>
+                </div>
+              </div>  
+            </div>  
             </div>
-          </div>
-          <div class="item item3">
-            <div class="container">
-              <div
-                class="bannerCard col-xxl-4 col-xl-6 col-lg-7 animate__animated animate__delay-1s"
-              >
-                <span class="subHead">Quality Assured</span>
-                <h1 class="display-3">Built to<br />Last</h1>
+            <!-- Slide 3 -->
+            <div class="swiper-slide slider3">
+            <div class="container slide-content">
+              <div class="row">
+                <div class="col-xl-6 col-lg-7">
+                <div class="banner2text">
+                  <span class="subHead">Quality Assured</span>
+                <h1 class="display-3">Built to Last</h1>
                 <p style="color:#c8d8e8;font-size:15px;margin:0;">Engineering durability with striking aesthetics.</p>
-              </div>
+                </div>
+                </div>
+              </div>  
+            </div>  
             </div>
           </div>
-        </div>
-      </div>
+          <!-- Navigation buttons -->
+          <div class="hero-button-next swiper-button-next"></div>
+          <div class="hero-button-prev swiper-button-prev"></div>
+
     </section>
-    <!-- banner start End-->    <!-- About / Trusted section -->
+    <!-- banner start End-->    
+
+    <!-- About / Trusted section -->
     <section class="Trusted defaultPadding">
       <div class="container-fluid custom">
         <div class="row g-md-5 gy-5 align-items-center">
-          <!-- Left: image + stats -->
-          <div class="col-12">
+
+          <!-- <div class="col-12">
             <div style="position:relative;">
               <iframe width="100%" height="auto" style="aspect-ratio:16/9;display:block;"
                 src="https://www.youtube.com/embed/h5NGNygvz2I?si=fukkXAYaNpPeNUIb"
                 title="Asha Tensile Structures" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <!-- Stats bar -->
+
               <div style="display:flex;gap:0;margin-top:0;">
                 <div style="flex:1;background:var(--primary);color:#fff;padding:18px 12px;text-align:center;">
                   <div style="font-size:28px;font-weight:800;color:var(--AccentColour);">40+</div>
@@ -216,8 +165,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Right: heading + feature cards -->
+          </div> -->
+
           <div class="col-12">
             <span class="subHead" style="--AccentColour:#00b4a6;">About Us</span>
             <h2 class="therdH" style="margin-top:8px;">Your Trusted Partner in Innovative Tensile Structures</h2>
@@ -260,7 +209,7 @@
                 </div>
               </div>
             </div>
-            <!-- product range thumbnails -->
+
             <h3 class="therdH" style="margin-top:36px;margin-bottom:16px;font-size:20px;">Tensile Membrane Product Range</h3>
             <div class="row g-2">
               <div class="col-md-3 col-6">
@@ -293,25 +242,7 @@
     <!-- Weather Solutions section start -->
     <section class="weatherSolutions defaultPadding">
       <div class="container-fluid custom">
-        <!-- <div class="PreferredPartnerCard">
-          <div class="imgpart1">
-            <img loading="lazy" src="image/Bowls-Aus-Pref-Partner.jpg" alt="" />
-          </div>
-          <div class="textPart1">
-            <h2 class="therdH">Bowls Australia Preferred Partner</h2>
-            <p>
-              Helping local sporting clubs to maximise the use of their outdoor
-              sporting facilities, Asha Tensile Structures have a range of
-              unique fabric canopies for lawn bowling greens, tennis
-              courts and school sports courts.
-            </p>
-            <p>
-              Demonstrating our commitment to sun-safe and weather protected
-              sporting facilities, Asha Tensile Structures has been a preferred
-              shade partner to Bowls Australia since 2011.
-            </p>
-          </div>
-        </div> -->
+       
         <h2 class="therdH">Our Most Popular Shade and Weather Solutions</h2>
         <p class="bodySmall">
           At Asha Tensile Structures, we specialize in providing high-quality,
@@ -517,7 +448,7 @@
 
     <!-- Shade Structures section start -->
 
-    <section class="ShadeStructures">
+    <!-- <section class="ShadeStructures">
       <div class="container-fluid">
         <div class="row rowDirection">
           <div class="col-lg-4 p-0 imgBg">
@@ -545,7 +476,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Shade Structures section end -->
 
     <!-- Articles & Stories section start -->
@@ -662,72 +593,74 @@
 
     <!-- Articles & Stories end -->
 
-    <section class="parallax-row2">
+    <!-- <section class="parallax-row2">
       <img loading="lazy"
         class="d-lg-none d-block"
         src="image/HomePageSection2.webp"
         alt="parallax image"
       />
-    </section>
+    </section> -->
 
     <!-- Drone Shoot section start  -->
-    <section class="DroneShoot defaultPadding">
-      <div class="container-fluid custom">
-        <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
-          <span style="display:inline-block;width:32px;height:3px;background:var(--AccentColour);border-radius:2px;"></span>
-          <span style="font-size:11px;text-transform:uppercase;letter-spacing:4px;color:var(--AccentColour);font-weight:700;">Video Gallery</span>
+    <section class="video-showcase-section defaultPadding">
+  <div class="container-fluid custom">
+    
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-8">
+        <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <span style="display:inline-block;width:40px;height:3px;background:var(--AccentColour);border-radius:2px;"></span>
+          <span style="font-size:12px;text-transform:uppercase;letter-spacing:4px;color:var(--AccentColour);font-weight:800;">Cinematic Showcase</span>
+          <span style="display:inline-block;width:40px;height:3px;background:var(--AccentColour);border-radius:2px;"></span>
         </div>
-        <h2 class="therdH">Asha Tensile Structures From Above</h2>
-        <p>A birds-eye view of some of our key projects, captured live from the sky.</p>
-        <div class="owl-carousel owl-theme" id="ca2">
-          <div class="item">
-            <div class="video-item">
-              <iframe width="100%" height="auto"
-                src="https://www.youtube.com/embed/ovlOx-G9PGo?enablejsapi=1"
-                title="Asha Tensile – Helensvale" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-item">
-              <iframe width="100%" height="auto"
-                src="https://www.youtube.com/embed/OB05exgKfsA?enablejsapi=1"
-                title="Asha Tensile – Glendale" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-item">
-              <iframe width="100%" height="auto"
-                src="https://www.youtube.com/embed/CngyO9mBBmE?enablejsapi=1"
-                title="Asha Tensile – Sydney Football Stadium" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-item">
-              <iframe width="100%" height="auto"
-                src="https://www.youtube.com/embed/yfsfULrOBs8?enablejsapi=1"
-                title="Asha Tensile – Schools" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <div class="video-item">
-              <iframe width="100%" height="auto"
-                src="https://www.youtube.com/embed/xnWm7YDgYzI?enablejsapi=1"
-                title="Asha Tensile – Project 5" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
+        <h2 class="secH" style="color: var(--primary);">Experience Our Architectural Mastery</h2>
+        <p style="color:var(--textGrey); margin: 0 auto; font-size: 15px;">
+          Watch our premium tensile fabric structures come to life. Browse our curated video gallery to see the scale, durability, and breathtaking elegance of our installations from every angle.
+        </p>
       </div>
-    </section>
+    </div>
+
+    <div class="swiper videoSwiper">
+      <div class="swiper-wrapper">
+        
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ovlOx-G9PGo?enablejsapi=1" title="Asha Tensile – Helensvale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/OB05exgKfsA?enablejsapi=1" title="Asha Tensile – Glendale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/CngyO9mBBmE?enablejsapi=1" title="Asha Tensile – Sydney Football Stadium" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/yfsfULrOBs8?enablejsapi=1" title="Asha Tensile – Schools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/xnWm7YDgYzI?enablejsapi=1" title="Asha Tensile – Project 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="swiper-pagination video-pagination"></div>
+      <div class="swiper-button-prev video-prev"></div>
+      <div class="swiper-button-next video-next"></div>
+    </div>
+
+  </div>
+</section>
     <!-- Drone Shoot section end -->
 
 
@@ -883,269 +816,176 @@
     </section>
     <!-- Information section end -->
 
-<footer class="modern-footer">
-  <div class="container-fluid custom">
-    <div class="row gy-5">
-      
-      <div class="col-lg-4 col-md-6 footer-brand-col">
-        <a href="index.html" class="footer-logo">
-          <img loading="lazy" src="image/White_ASHA TENSILE.png" alt="Asha Tensile Structures Logo" />
-        </a>
-        <ul class="footer-contact-list">
-          <li>
-            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-            <div class="text-box">
-              <a target="_blank" href="https://maps.app.goo.gl/DrMLbdvvkcMPMYeQA">Akashvani, 1734 Chitrakut Hos. Soc. B/H, Makarpura Rd, Vadodara, Gujarat, India. 390010.</a>
-            </div>
-          </li>
-          <li>
-            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-            <div class="text-box">
-              <a href="tel:+919574720006">+91 957 472 0006</a>
-            </div>
-          </li>
-          <li>
-            <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-            <div class="text-box">
-              <a href="mailto:info@ashatensilestructures.com">info@ashatensilestructures.com</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links-col">
-        <h4 class="footer-heading">Company Profile</h4>
-        <div class="footer-heading-line"></div>
-        <ul class="footer-links">
-          <li><a href="product.html">Product Range</a></li>
-          <li><a href="architecturalMembraneIntroduction .html">Architectural Membrane Intro</a></li>
-          <li><a href="services.html">Our Services</a></li>
-          <li><a href="aboutUS.html">About Us</a></li>
-          <li><a href="contactUs.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-5 col-md-12 footer-links-col">
-        <h4 class="footer-heading">Our Solutions</h4>
-        <div class="footer-heading-line"></div>
-        <div class="row">
-          <div class="col-sm-6">
-            <ul class="footer-links">
-              <li><a href="atriumTensileStructure.html">Modular Tensile</a></li>
-              <li><a href="conicalTensileStructures.html">Conical Tensile</a></li>
-              <li><a href="customizedTensileStructures.html">Customized Tensile</a></li>
-              <li><a href="snailResortTentTensileStructures.html">Resort Tents</a></li>
-              <li><a href="tennisCourtTensileStructure.html">Sports Structures</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-6 mt-3 mt-sm-0">
-            <ul class="footer-links">
-              <li><a href="swimmingPoolTensileCanopies.html">Tensile Canopies</a></li>
-              <li><a href="carParkingTensileStructures.html">Car Parking Tensile</a></li>
-              <li><a href="meshFabricDesignsTensileStructures.html">Mesh Fabric Designs</a></li>
-              <li><a href="banquetHallTensileStructure.html">Banquet Hall Tensile</a></li>
-              <li><a href="basementRampTensileStructures.html">Basement Ramps</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          <p class="copyright-text">
-            &copy; 2026 Asha Tensile Structures. All Rights Reserved. <br class="d-lg-none d-block">
-            Developed & Maintained by <a href="https://shriiitrackingsolution.in/" target="_blank">Shriii Tracking Solution</a>
-          </p>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <div class="footer-social-modern">
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://g.page/" target="_blank" aria-label="Google" title="Follow us on Google"><i class="fab fa-google"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn" title="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="footer-container"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="js/script.js"></script>
+
+
+
     <script>
-      $(document).ready(function () {
-        var videoSlider = $("#ca2");
-
-        // Add enablejsapi=1 to all iframe URLs
-        $(".owl-item .item iframe").each(function () {
-          var iframe = $(this);
-          var src = iframe.attr("src");
-
-          // Check if enablejsapi=1 is already present
-          if (src && src.indexOf("enablejsapi=1") === -1) {
-            var newSrc =
-              src.indexOf("?") === -1
-                ? src + "?enablejsapi=1"
-                : src + "&enablejsapi=1";
-            iframe.attr("src", newSrc);
-          }
+      const bannerSwiper = new Swiper(".mySwiper", {
+        autoplay: {
+          delay: 4000, // wait 3s before auto slide
+          disableOnInteraction: false, // keeps autoplay after user swipes
+        },
+        speed: 1000, // 1s transition between slides
+        loop: true,
+        navigation: {
+          nextEl: ".hero-button-next",
+          prevEl: ".hero-button-prev",
+        },
+        effect: "fade",
+      }); 
+      
+      document.addEventListener("DOMContentLoaded", function() {
+  
+  const videoSwiper = new Swiper('.videoSwiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    speed: 800,
+    coverflowEffect: {
+      rotate: 0, // Keep them flat, no 3D rotation
+      stretch: 0,
+      depth: 150, // Pushes inactive slides backwards
+      modifier: 1.5, // Scales down inactive slides
+      slideShadows: false, // Turned off so we can use our custom CSS shadows
+    },
+    // Responsive breakpoints
+    breakpoints: {
+      320: {
+        slidesPerView: 1.1, // Show a tiny peek of the next slide on mobile
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 1.5,
+        spaceBetween: 30
+      },
+      1024: {
+        slidesPerView: 2, // Desktop shows 2 full slides total (1 center, two halves)
+        spaceBetween: 40
+      }
+    },
+    navigation: {
+      nextEl: '.video-next',
+      prevEl: '.video-prev',
+    },
+    pagination: {
+      el: '.video-pagination',
+      clickable: true,
+    },
+    on: {
+      // Magic trick: Pause YouTube videos when the user slides away
+      slideChangeTransitionStart: function () {
+        document.querySelectorAll('.videoSwiper iframe').forEach(iframe => {
+          // Send the pause command to the YouTube API
+          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         });
-
-        // Initialize Owl Carousel
-        videoSlider.owlCarousel({
-          loop: true,
-          stagePadding: 100,
-          margin: 10,
-          nav: true,
-          dots: true,
-          dotsEach: 1,
-          items: 1,
-          responsive: {
-            0: {
-              stagePadding: 40, // Stage padding for mobile view
-            },
-            600: {
-              stagePadding: 70, // Stage padding for tablet view
-            },
-            1000: {
-              stagePadding: 100, // Stage padding for desktop view
-            },
-          },
-        });
-
-        // Pause all videos when the slide starts to transition
-        videoSlider.on("translate.owl.carousel", function () {
-          $(".owl-item .item iframe").each(function () {
-            // Pause YouTube iframe by sending a 'pause' message
-            var iframe = $(this);
-            iframe[0].contentWindow.postMessage(
-              '{"event":"command","func":"pauseVideo","args":""}',
-              "*"
-            );
-          });
-        });
-
-        // Play the video in the active slide after the transition is complete
-        videoSlider.on("translated.owl.carousel", function () {
-          var activeIframe = $(".owl-item.active .item iframe");
-          if (activeIframe.length) {
-            // Play YouTube iframe by sending a 'play' message
-            activeIframe[0].contentWindow.postMessage(
-              '{"event":"command","func":"playVideo","args":""}',
-              "*"
-            );
-          }
-        });
-      });
-    </script>
-
-<script>
-  // Header Script 
-  // Debounce function to limit how often the event handler executes
-  function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  }
-
-  // Header scroll handler
-  function handleScroll() {
-    const header = document.getElementById("main-header");
-    const headerOffset = header.offsetTop;
-    const headerHeight = header.offsetHeight;
-    const belowContent = document.getElementById("headBelowContent");
-    const belowContentOffset = belowContent.offsetTop;
-    const belowContentHeight = belowContent.offsetHeight;
-
-    if (window.pageYOffset > headerOffset + headerHeight + 5) {
-      header.classList.add("sticky-header", "visible");
-      header.classList.remove("headerAnimate");
-
-      applyNavbarStyles();
-    } else {
-      if (
-        window.pageYOffset <
-        belowContentOffset + belowContentHeight + 4
-      ) {
-        header.classList.remove("sticky-header", "visible");
-        header.classList.add("headerAnimate");
       }
     }
-  }
-
-  // Function to handle navbar styles based on layout
-  function applyNavbarStyles() {
-    const navbar = document.getElementById("navbarSupportedContent");
-
-    if (window.matchMedia("(max-device-width: 991.98px)").matches) {
-      navbar.setAttribute(
-        "style",
-        "max-height: calc(100vh - 112px); overflow-y: auto;"
-      );
-    } else if (window.matchMedia("(max-device-width: 1199.98px)").matches) {
-      navbar.setAttribute("style", "");
-    } else {
-      navbar.setAttribute("style", "");
-    }
-  }
-
-  // Attach debounced scroll and resize events
-  const debouncedHandleScroll = debounce(handleScroll, 0);
-  const debouncedApplyNavbarStyles = debounce(applyNavbarStyles, 0);
-
-  window.addEventListener("scroll", debouncedHandleScroll);
-  window.addEventListener("resize", debouncedApplyNavbarStyles);
-
-  // Run once on page load to ensure styles are applied correctly
-  window.addEventListener("load", () => {
-    debouncedApplyNavbarStyles();
-    debouncedHandleScroll();
   });
-</script>
+
+});
+
+    </script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Select the element
-        const element = document.querySelector(".owl-nav");
-        // Add the class
-        element.classList.add("container");
+      document.addEventListener("DOMContentLoaded", function() {
+        // 1. Load Footer
+        fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading footer:', error));
+
+        // 2. Load Header
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            // 3. Initialize the New Navigation after it is loaded into the page
+            initializeNewNav();
+          })
+          .catch(error => console.error('Error loading header:', error));
       });
 
-      const prevBtn = `<i class="fa-solid fa-angle-left"></i>`;
-      const nextBtn = `<i class="fa-solid fa-angle-right"></i>`;
+      function initializeNewNav() {
+        /* --- Mobile Menu Toggler --- */
+        const toggleBtn = document.querySelector(".navbar-toggler");
+        const navbarNav = document.querySelector(".navbar-nav");
+        const navCloseBtn = document.querySelector(".btn-nav-close");
 
-      $("#ca1").owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        dots: false,
-        dotsEach: 1,
-        animateOut: "fadeOut",
-        navText: [prevBtn, nextBtn],
-        autoplay: true,
-        autoplayTimeout: 6000,
-        smartSpeed:450,
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 1,
-          },
-          1000: {
-            items: 1,
-          },
-        },
-      });
+        if (toggleBtn && navbarNav) {
+            toggleBtn.addEventListener("click", () => navbarNav.classList.add("active"));
+        }
+        if (navCloseBtn && navbarNav) {
+            navCloseBtn.addEventListener("click", () => navbarNav.classList.remove("active"));
+        }
+
+        /* --- Dropdown SVG Icons --- */
+        const navItems = document.querySelectorAll(".nav-item");
+        navItems.forEach((item) => {
+            const hasDropdowns = item.querySelector(".dropdown") !== null;
+            if (hasDropdowns) {
+                const svgIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svgIcon.setAttribute("width", "16");
+                svgIcon.setAttribute("height", "16");
+                svgIcon.setAttribute("viewBox", "0 0 24 24");
+                svgIcon.setAttribute("fill", "currentColor");
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", "M15.707 11.293a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 1 1-1.414-1.414l4.95-4.95l-4.95-4.95a1 1 0 0 1 1.414-1.414z"); 
+                svgIcon.appendChild(path);
+                
+                const link = item.querySelector("a");
+                if (link) link.appendChild(svgIcon);
+            }
+        });
+
+        /* --- Auto Active Page Script --- */
+        // Get the current URL, ignoring #anchors or ?queries
+        const currentUrl = window.location.href.split('#')[0].split('?')[0]; 
+        const allNavLinks = document.querySelectorAll(".nav-link");
+        
+        allNavLinks.forEach((link) => {
+            const linkUrl = link.href.split('#')[0].split('?')[0];
+            if (linkUrl === currentUrl && link.getAttribute("href") !== "#") {
+                link.classList.add("active");
+                
+                // Highlight parent menu if inside a dropdown
+                const parentDropdown = link.closest('.dropdown');
+                if (parentDropdown) {
+                    const parentNavItem = parentDropdown.closest('.nav-item');
+                    if (parentNavItem) {
+                        const parentLink = parentNavItem.querySelector('.nav-link');
+                        if (parentLink) parentLink.classList.add("active");
+                    }
+                }
+            }
+        });
+
+        /* --- Sticky Header on Scroll --- */
+        // Targets the new header wrapper to make it sticky
+        const header = document.querySelector("header"); 
+        if (header) {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 90) {
+                    header.classList.add("sticky-header", "visible");
+                    header.classList.remove("headerAnimate");
+                } else {
+                    header.classList.remove("sticky-header", "visible");
+                    header.classList.add("headerAnimate");
+                }
+            });
+        }
+      }
     </script>
   </body>
 </html>
