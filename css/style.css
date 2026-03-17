@@ -1424,6 +1424,28 @@ address .footerLinks{
   color: var(--primary);
 }
 
+.backNew::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-45deg, rgba(0, 180, 166, 0.04) 0px, rgba(0, 180, 166, 0.04) 1px, transparent 1px, transparent 22px);
+    pointer-events: none;
+}
+.backNew{
+    background: linear-gradient(120deg, var(--primary) 0%, #0b3360 50%, #0a3d4e 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    color: #ffffff;
+    height: 100%;
+}
+figure {
+    margin: 0;
+}
+
+.productDescription{
+  background-color: #00b4a53f;
+}
 
 .contactBanner img{
   max-height: 550px;
