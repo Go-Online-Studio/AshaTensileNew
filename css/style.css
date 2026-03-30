@@ -654,13 +654,22 @@ background-size: contain;
     }
 
     .slider1{
-      background: linear-gradient(to right, #0000008c 40%, #00000000) center/cover, url('../image/BannerImg.webp') center / cover no-repeat;
+      background: linear-gradient(to right, #0000008c 40%, #00000000) center/cover, url('../image/BannerImage1.webp') center / cover no-repeat;
     }
     .slider2{
-      background: linear-gradient(to right, #0000006e 40%, #00000000) center/cover, url('../image/Sustainability-of-architectural-fabrics-hero-700x525.webp') center / cover no-repeat;
+      background: linear-gradient(to right, #0000006e 40%, #00000000) center/cover, url('../image/BannerImage2.webp') center / cover no-repeat;
     }
     .slider3{
-      background: linear-gradient(to right, #0000006e 0%, #00000011 100%) center/cover, url('../image/Schools.webp') center / cover no-repeat;
+      background: linear-gradient(to right, #0000006e 0%, #00000011 100%) center/cover, url('../image/BannerImage3.webp') center / cover no-repeat;
+    }
+    .slider4{
+      background: linear-gradient(to right, #0000006e 0%, #00000011 100%) center/cover, url('../image/BannerImage4.webp') center / cover no-repeat;
+    }
+    .slider5{
+      background: linear-gradient(to right, #0000006e 0%, #00000011 100%) center/cover, url('../image/BannerImage5.webp') center / cover no-repeat;
+    }
+    .slider6{
+      background: linear-gradient(to right, #0000006e 0%, #00000011 100%) center/cover, url('../image/BannerImage6.webp') center / cover no-repeat;
     }
 
 .subHead {
@@ -1392,7 +1401,7 @@ address .footerLinks{
 
 .parallax-row3 {
   height: 436px;
-  background: url("../image/ProductRangeSection.webp");
+  background: url("../image/HomePageSection1.webp");
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;

@@ -44,19 +44,37 @@
 .slider3{
   background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob3.webp') center / cover no-repeat;
 }
+.slider4{
+  background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob4.webp') center / cover no-repeat;
+}
+.slider5{
+  background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob5.webp') center / cover no-repeat;
+}
+.slider6{
+  background: linear-gradient(to right, #0000009c 40%, #0000009c) center/cover, url('../image/HomebannerMob6.webp') center / cover no-repeat;
+}
 
 }
 
 @media screen and (device-width: 1024px) and (device-height: 600px) and (orientation: landscape) {
   /* Styles for Google Nest Hub in landscape */
   .slider1{
-    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImg.webp') center / cover no-repeat;
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage1.webp') center / cover no-repeat;
   }
   .slider2{
-    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Sustainability-of-architectural-fabrics-hero-700x525.webp') center / cover no-repeat;
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage2.webp') center / cover no-repeat;
   }
   .slider3{
-    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Schools.webp') center / cover no-repeat;
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage3.webp') center / cover no-repeat;
+  }
+  .slider4{
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage4.webp') center / cover no-repeat;
+  }
+  .slider5{
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage5.webp') center / cover no-repeat;
+  }
+  .slider6{
+    background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage6.webp') center / cover no-repeat;
   }
 
 }
@@ -332,6 +350,9 @@
     font-weight: bold;
     display: block;
   }
+  .display-3 {
+  font-size: 38px;
+}
 
   .secH {
     color: var(--primary);
@@ -435,12 +456,21 @@
     }
 
 .slider1{
-  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImg.webp') center / cover no-repeat;
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage1.webp') center / cover no-repeat;
 }
 .slider2{
-  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Sustainability-of-architectural-fabrics-hero-700x525.webp') center / cover no-repeat;
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage2.webp') center / cover no-repeat;
 }
 .slider3{
-  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/Schools.webp') center / cover no-repeat;
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage3.webp') center / cover no-repeat;
+}
+.slider4{
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage4.webp') center / cover no-repeat;
+}
+.slider5{
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage5.webp') center / cover no-repeat;
+}
+.slider6{
+  background: linear-gradient(to right, #0000009c 40%, #00000018) center/cover, url('../image/BannerImage6.webp') center / cover no-repeat;
 }
 }
