@@ -373,7 +373,9 @@
 
   .navbar-brand {
     margin-right: 15px;
-  }
+    width: 128px;
+    height: 48.66px;
+}
   .brandIllustrations .container-fluid > .row {
     row-gap: 30px;
   }
