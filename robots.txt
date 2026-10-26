@@ -1,3 +1,51 @@
 User-agent: *
 Allow: /
-Sitemap: https://ashatensilestructures.in/sitemap.xml
+
+# Sitemap
+Sitemap: https://www.ashatensilestructures.in/sitemap.xml
+
+# 1. OpenAI (ChatGPT Search & Training Models)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# 2. Google (Gemini & AI Overviews)
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# 3. Anthropic (Claude Bot & Search)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+
+# 4. Microsoft (Copilot & Bing AI)
+User-agent: bingbot
+Allow: /
+
+# 5. Perplexity AI (Answer Engine)
+User-agent: PerplexityBot
+Allow: /
+
+# 6. Meta (Meta AI)
+User-agent: meta-externalagent
+Allow: /
+User-agent: meta-webindexer
+Allow: /
+
+# 7. Apple (Apple Intelligence)
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# 8. Common Crawl (Open database used by many smaller AI projects)
+User-agent: CCBot
+Allow: /
+
+# Global fallback for other general search crawlers
+User-agent: *
+Allow: /
