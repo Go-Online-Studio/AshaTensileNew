@@ -78,39 +78,42 @@ img {
 .display-3 {
   color: #ffffff;
   font-weight: 700;
-  font-size: 52px;
+  font-size: clamp(30px, 5vw, 52px);
   margin-bottom: 20px;
   letter-spacing: -1px;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .secH {
   color: var(--primary);
   font-weight: 700;
-  font-size: 46px;
-  margin-bottom: 30px;
+  font-size: clamp(26px, 4vw, 44px);
+  margin-bottom: 24px;
+  line-height: 1.2;
 }
 
 .therdH {
-  font-size: 40px;
+  font-size: clamp(22px, 3.2vw, 36px);
   color: var(--primary);
-  font-weight: bold;
-  margin-bottom: 34px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.25;
 }
 
 .fourthH {
-  font-size: 30px;
-  font-variant: var(--primary);
-  line-height: 1.5;
-  font-family: Open Sans;
+  font-size: clamp(19px, 2.5vw, 26px);
+  color: var(--primary);
+  line-height: 1.35;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
 .fifthH {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: clamp(16px, 1.8vw, 18px);
+  font-weight: 700;
   margin-bottom: 10px;
+  line-height: 1.4;
 }
 .bodySmall {
   font-size: 14px;
@@ -768,6 +771,7 @@ background-size: contain;
 
 }
 
+.hoverCard h3,
 .hoverCard h4 {
   color: #ffffff;
   font-family: "Open Sans";
@@ -781,6 +785,7 @@ background-size: contain;
   line-height: 22px;
   text-transform: capitalize;
   flex: 1 0 auto;
+  margin: 0;
 }
 
 .hoverCard a {
