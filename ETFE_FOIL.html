@@ -26,7 +26,6 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/spotlight.css">
     <link rel="preconnect" href="https://kit.fontawesome.com" />
     <link rel="dns-prefetch" href="https://kit.fontawesome.com" />
     <script src="https://kit.fontawesome.com/52ca9e0df4.js" crossorigin="anonymous"></script>
@@ -379,61 +378,6 @@ In two or more layers, a pneumatic cushion is created that is then attached usin
     </script>
 
 
-    <script>
-      $(document).ready(function () {
-        var videoSlider = $("#ca2");
-
-        // Add enablejsapi=1 to all iframe URLs
-        $(".owl-item .item iframe").each(function () {
-          var iframe = $(this);
-          var src = iframe.attr("src");
-
-          // Check if enablejsapi=1 is already present
-          if (src && src.indexOf("enablejsapi=1") === -1) {
-            var newSrc =
-              src.indexOf("?") === -1
-                ? src + "?enablejsapi=1"
-                : src + "&enablejsapi=1";
-            iframe.attr("src", newSrc);
-          }
-        });
-
-        // Initialize Owl Carousel
-        videoSlider.owlCarousel({
-          loop: true,
-          stagePadding: 100,
-          margin: 10,
-          nav: true,
-          dots: true,
-          dotsEach: 1,
-          items: 1,
-        });
-
-        // Pause all videos when the slide starts to transition
-        videoSlider.on("translate.owl.carousel", function () {
-          $(".owl-item .item iframe").each(function () {
-            // Pause YouTube iframe by sending a 'pause' message
-            var iframe = $(this);
-            iframe[0].contentWindow.postMessage(
-              '{"event":"command","func":"pauseVideo","args":""}',
-              "*"
-            );
-          });
-        });
-
-        // Play the video in the active slide after the transition is complete
-        videoSlider.on("translated.owl.carousel", function () {
-          var activeIframe = $(".owl-item.active .item iframe");
-          if (activeIframe.length) {
-            // Play YouTube iframe by sending a 'play' message
-            activeIframe[0].contentWindow.postMessage(
-              '{"event":"command","func":"playVideo","args":""}',
-              "*"
-            );
-          }
-        });
-      });
-    </script>
       
     <script>
       document.addEventListener("DOMContentLoaded", function() {
