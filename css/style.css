@@ -259,9 +259,28 @@ img {
 	 visibility: visible;
 	 transform: translateY(0px);
 }
- .nav-item:hover > a svg {
+ .nav-item:hover > a svg,
+ .nav-item.dropdown-open > .dropdown-arrow svg {
 	 transform: rotate(90deg);
    transition: transform 0.2s ease-in-out;
+}
+
+/* Dropdown arrow button – separate tap target */
+.dropdown-arrow {
+  display: none; /* hidden on desktop; shown in mobile via responsive.css */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Desktop: show dropdown on hover (existing) OR on .dropdown-open */
+.nav-item.dropdown-open > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
 }
  .nav-close {
 	 margin-left: auto;

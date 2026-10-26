@@ -220,16 +220,63 @@
 	 .nav-item .dropdown:before {
 		 display: none;
 	}
-	 .nav-item:hover > .dropdown {
+	 .nav-item:hover > .dropdown,
+	 .nav-item.dropdown-open > .dropdown {
 		 opacity: 1;
 		 visibility: visible;
 		 transform: translateY(0px);
-		 max-height: initial;
+		 max-height: 600px;
+		 overflow: visible;
 	}
 	 .nav-item.icon a svg {
 		 top: unset;
 		 right: 0;
 		 transform: translateY(0px);
+	}
+
+	/* Dropdown arrow button – mobile tap target */
+	 .nav-item > .dropdown-arrow {
+		 display: flex;
+		 align-items: center;
+		 justify-content: center;
+		 min-width: 44px;
+		 min-height: 44px;
+		 flex-shrink: 0;
+		 color: #ffffff;
+		 transition: color 0.2s ease;
+		 margin-left: auto;
+	}
+	 .sticky-header .nav-item > .dropdown-arrow {
+		 color: var(--primary);
+	}
+	 .nav-item > .dropdown-arrow svg {
+		 transition: transform 0.25s ease;
+	}
+	 .nav-item.dropdown-open > .dropdown-arrow svg {
+		 transform: rotate(90deg);
+	}
+	 .nav-item > .dropdown-arrow:hover,
+	 .nav-item > .dropdown-arrow:focus {
+		 color: var(--AccentColour);
+		 outline: none;
+	}
+	/* Each nav-item row: link + arrow side by side */
+	 .navbar-nav > .nav-item {
+		 display: flex;
+		 flex-wrap: wrap;
+		 align-items: center;
+	}
+	 .navbar-nav > .nav-item > .nav-link {
+		 flex: 1;
+		 margin: 0;
+		 padding: 14px 0;
+	}
+	/* Dropdown slides open below the row */
+	 .navbar-nav > .nav-item > .dropdown {
+		 width: 100%;
+		 padding-left: 12px;
+		 border-left: 3px solid var(--AccentColour);
+		 margin-bottom: 4px;
 	}
 }
 
