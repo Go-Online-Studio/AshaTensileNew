@@ -1,6 +1,3 @@
-User-agent: *
-Allow: /
-
 # Sitemap
 Sitemap: https://www.ashatensilestructures.in/sitemap.xml
 
