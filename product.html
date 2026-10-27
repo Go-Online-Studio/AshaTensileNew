@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,11 +28,11 @@
 <meta name="author" content="Asha Tensile Structures">
 
 <!-- Open Graph (Social Media Sharing) -->
-
     <link fetchpriority="high" rel="preload" href="image/White_ASHA TENSILE.png" as="image" type="image/png" />
     <link fetchpriority="high" rel="preload" href="image/ASHA TENSILE.png" as="image" type="image/png" />
     <link fetchpriority="high" rel="preload" href="image/ProductRangeBanner.webp" as="image" type="image/webp" />
-    <link fetchpriority="high" rel="preload" href="image/ProductRangeBanner.webp" as="image" type="image/webp" />
+    <link fetchpriority="high" rel="preload" href="image/ProductRangeMob.webp" as="image" type="image/webp" />
+
 
     <!-- Preload -->
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
@@ -129,7 +129,10 @@
             <img src="image/White_ASHA TENSILE.png" alt="Asha Tensile Structures" width="166" height="63">
           </a>
 		<button class="navbar-toggler" aria-label="Toggle navigation menu">
-			<i class="fa fa-bars" aria-hidden="true"></i>
+			<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+				<path d="M0 0h16v16H0z" fill="none" />
+				<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5" />
+			</svg>
 		</button>
 		<ul class="navbar-nav">
 			<li class="nav-close">
@@ -759,12 +762,68 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
+        // Setup touch-friendly video posters before initializing Swiper so loop duplicates inherit them
+        const videoWrappers = document.querySelectorAll('.videoSwiper .video-wrapper');
+        videoWrappers.forEach(wrapper => {
+          const iframe = wrapper.querySelector('iframe');
+          if (!iframe) return;
+          const src = iframe.getAttribute('src') || '';
+          const match = src.match(/embed\/([a-zA-Z0-9_-]+)/);
+          if (!match) return;
+          const videoId = match[1];
+
+          const poster = document.createElement('div');
+          poster.className = 'video-poster';
+          poster.setAttribute('role', 'button');
+          poster.setAttribute('tabindex', '0');
+          poster.setAttribute('aria-label', 'Play Video');
+          poster.innerHTML = `
+            <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="Asha Tensile Video" loading="lazy" />
+            <div class="video-play-btn" aria-hidden="true">
+              <i class="fa-solid fa-play"></i>
+            </div>
+          `;
+          wrapper.appendChild(poster);
+        });
+
+        // Delegate click on posters to play video (handles both original & Swiper loop-cloned slides)
+        const videoSwiperEl = document.querySelector('.videoSwiper');
+        if (videoSwiperEl) {
+          videoSwiperEl.addEventListener('click', function (e) {
+            const poster = e.target.closest('.video-poster');
+            if (!poster) return;
+            e.stopPropagation();
+
+            const wrapper = poster.closest('.video-wrapper');
+            if (!wrapper) return;
+            const iframe = wrapper.querySelector('iframe');
+            if (!iframe) return;
+
+            poster.style.opacity = '0';
+            setTimeout(() => { poster.style.display = 'none'; }, 280);
+
+            let currentSrc = iframe.getAttribute('src') || '';
+            if (!currentSrc.includes('autoplay=1')) {
+              const sep = currentSrc.includes('?') ? '&' : '?';
+              iframe.setAttribute('src', currentSrc + sep + 'autoplay=1');
+            } else {
+              iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            }
+          });
+        }
+
         const videoSwiper = new Swiper('.videoSwiper', {
           effect: 'coverflow',
           grabCursor: true,
           centeredSlides: true,
           loop: true,
           speed: 800,
+          slideToClickedSlide: true,
+          touchRatio: 1,
+          touchAngle: 45,
+          threshold: 5,
+          preventClicks: true,
+          preventClicksPropagation: true,
           coverflowEffect: {
             rotate: 0,
             stretch: 0,
@@ -774,7 +833,7 @@
           },
           breakpoints: {
             320: {
-              slidesPerView: 1.1,
+              slidesPerView: 1.15,
               spaceBetween: 15
             },
             768: {
@@ -799,6 +858,10 @@
               document.querySelectorAll('.videoSwiper iframe').forEach(iframe => {
                 iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
               });
+              document.querySelectorAll('.videoSwiper .video-poster').forEach(poster => {
+                poster.style.display = 'block';
+                poster.style.opacity = '1';
+              });
             }
           }
         });
@@ -816,25 +879,84 @@
             toggleBtn.addEventListener("click", () => navbarNav.classList.add("active"));
         }
         if (navCloseBtn && navbarNav) {
-            navCloseBtn.addEventListener("click", () => navbarNav.classList.remove("active"));
+            navCloseBtn.addEventListener("click", () => {
+                navbarNav.classList.remove("active");
+                // Collapse all open dropdowns when sidebar closes
+                document.querySelectorAll(".nav-item.dropdown-open").forEach(el => el.classList.remove("dropdown-open"));
+            });
         }
 
-        /* --- Dropdown SVG Icons --- */
-        const navItems = document.querySelectorAll(".nav-item");
+        /* --- Dropdown Arrow Buttons (tap anywhere on Company Profile to toggle dropdown on mobile) --- */
+        const navItems = document.querySelectorAll(".navbar-nav > .nav-item");
         navItems.forEach((item) => {
-            const hasDropdowns = item.querySelector(".dropdown") !== null;
-            if (hasDropdowns) {
-                const svgIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                svgIcon.setAttribute("width", "16");
-                svgIcon.setAttribute("height", "16");
-                svgIcon.setAttribute("viewBox", "0 0 24 24");
-                svgIcon.setAttribute("fill", "currentColor");
-                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                path.setAttribute("d", "M15.707 11.293a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 1 1-1.414-1.414l4.95-4.95l-4.95-4.95a1 1 0 0 1 1.414-1.414z"); 
-                svgIcon.appendChild(path);
-                
-                const link = item.querySelector("a");
-                if (link && !link.querySelector("svg")) link.appendChild(svgIcon);
+            const dropdown = item.querySelector(".dropdown");
+            if (!dropdown) return;
+
+            // Build the arrow button
+            const arrowBtn = document.createElement("button");
+            arrowBtn.className = "dropdown-arrow";
+            arrowBtn.setAttribute("aria-label", "Toggle dropdown");
+            arrowBtn.setAttribute("type", "button");
+
+            const svgIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svgIcon.setAttribute("width", "16");
+            svgIcon.setAttribute("height", "16");
+            svgIcon.setAttribute("viewBox", "0 0 24 24");
+            svgIcon.setAttribute("fill", "currentColor");
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", "M15.707 11.293a1 1 0 0 1 0 1.414l-5.657 5.657a1 1 0 1 1-1.414-1.414l4.95-4.95l-4.95-4.95a1 1 0 0 1 1.414-1.414z");
+            svgIcon.appendChild(path);
+            arrowBtn.appendChild(svgIcon);
+
+            // Insert arrow button after the <a> link
+            const link = item.querySelector(":scope > a");
+            if (link) {
+                link.insertAdjacentElement("afterend", arrowBtn);
+            }
+
+            function toggleDropdown(e) {
+                if (window.innerWidth < 992) {
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    const isOpen = item.classList.contains("dropdown-open");
+
+                    // Close all other open dropdowns
+                    document.querySelectorAll(".nav-item.dropdown-open").forEach(el => {
+                        if (el !== item) el.classList.remove("dropdown-open");
+                    });
+
+                    item.classList.toggle("dropdown-open", !isOpen);
+                }
+            }
+
+            /* Mobile: tap Company Profile link or arrow to toggle dropdown */
+            if (link) {
+                link.addEventListener("click", (e) => {
+                    if (window.innerWidth < 992) {
+                        toggleDropdown(e);
+                    }
+                });
+            }
+
+            arrowBtn.addEventListener("click", (e) => {
+                toggleDropdown(e);
+            });
+
+            /* Desktop: keep hover behaviour — mouseleave closes dropdown */
+            item.addEventListener("mouseleave", () => {
+                if (window.innerWidth >= 992) item.classList.remove("dropdown-open");
+            });
+        });
+
+        /* Close sidebar on outside click/tap */
+        document.addEventListener("click", (e) => {
+            if (navbarNav && navbarNav.classList.contains("active")) {
+                if (!navbarNav.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    navbarNav.classList.remove("active");
+                    document.querySelectorAll(".nav-item.dropdown-open").forEach(el => el.classList.remove("dropdown-open"));
+                }
             }
         });
 
