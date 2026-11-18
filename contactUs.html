@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
    <meta charset="UTF-8" />
@@ -311,17 +311,32 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="whatsappModalLabel">Select WhatsApp Type</h3>
+        <h3 class="modal-title" id="whatsappModalLabel" style="font-size:1.15rem;font-weight:600;margin:0;">Select WhatsApp Type</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="options d-flex gap-3 justify-content-center p-3">
-          <button id="whatsappStandard" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp">
-            <i class="fa-brands fa-whatsapp fa-2x" style="color:#25D366;" aria-hidden="true"></i>
+        <div class="options d-flex gap-3 justify-content-center p-2">
+          <button id="whatsappStandard" type="button" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp" style="border-radius:8px;font-weight:500;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 176 176">
+              <g data-name="Layer 2">
+                <g data-name="09.whatsapp">
+                  <circle cx="88" cy="88" r="88" fill="#29a71a"/>
+                  <g fill="#fff">
+                    <path d="M126.8 49.2a54.57 54.57 0 0 0-87.42 63.13l-5.79 28.11a2.08 2.08 0 0 0 .33 1.63 2.11 2.11 0 0 0 2.24.87l27.55-6.53A54.56 54.56 0 0 0 126.8 49.2m-8.59 68.56a42.74 42.74 0 0 1-49.22 8l-3.84-1.9-16.89 4 .05-.21 3.5-17-1.88-3.71a42.72 42.72 0 0 1 7.86-49.59 42.73 42.73 0 0 1 60.42 0 2 2 0 0 0 .22.22 42.72 42.72 0 0 1-.22 60.19"/>
+                    <path d="M116.71 105.29c-2.07 3.26-5.34 7.25-9.45 8.24-7.2 1.74-18.25.06-32-12.76l-.17-.15C63 89.41 59.86 80.08 60.62 72.68c.42-4.2 3.92-8 6.87-10.48a3.93 3.93 0 0 1 6.15 1.41l4.45 10a3.91 3.91 0 0 1-.49 4l-2.25 2.92a3.87 3.87 0 0 0-.35 4.32c1.26 2.21 4.28 5.46 7.63 8.47 3.76 3.4 7.93 6.51 10.57 7.57a3.82 3.82 0 0 0 4.19-.88l2.61-2.63a4 4 0 0 1 3.9-1l10.57 3a4 4 0 0 1 2.24 5.91"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
             <span>WhatsApp</span>
           </button>
-          <button id="whatsappBusiness" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp Business">
-            <i class="fa-brands fa-whatsapp fa-2x" style="color:#128C7E;" aria-hidden="true"></i>
+          <button id="whatsappBusiness" type="button" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp Business" style="border-radius:8px;font-weight:500;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 512 512">
+              <circle fill="#29a71a" cx="256" cy="256" r="256"/>
+              <path fill="#fff" d="M410.28,217.47h-35.69c13.39,42.74,3.13,91.26-30.71,125.1-37.78,37.69-95.4,47.05-143.18,23.28l-11.17-5.53-49.14,11.64.15-.61,10.18-49.46-5.47-10.79c-24.42-47.97-15.19-106.2,22.87-144.26,37.8-37.79,93.88-46.15,139.77-25.08v-37.03c-55.32-19.06-119.13-6.67-163.52,37.28-49.04,48.56-61.09,123.25-29.81,184.77l-16.84,81.77c-.36,1.65,0,3.37.96,4.74,1.43,2.12,4.03,3.13,6.51,2.54l80.15-19c78.5,39.02,173.76,7.01,212.77-71.49,17.02-34.23,20.72-72.42,12.17-107.87Z"/>
+              <path fill="#fff" d="M339.52,306.3c-6.02,9.48-15.53,21.09-27.49,23.97-20.95,5.06-53.09.17-93.09-37.12l-.49-.44c-35.17-32.61-44.31-59.75-42.09-81.28,1.22-12.22,11.4-23.27,19.99-30.49,4.8-4.1,12.02-3.53,16.12,1.27.73.85,1.32,1.8,1.77,2.83l12.95,29.09c1.71,3.84,1.17,8.32-1.43,11.64l-6.55,8.49c-2.87,3.59-3.28,8.56-1.02,12.57,3.67,6.43,12.45,15.88,22.2,24.64,10.94,9.89,23.07,18.94,30.75,22.02,4.2,1.72,9.03.7,12.19-2.56l7.59-7.65c2.98-2.94,7.32-4.05,11.35-2.91l30.75,8.73c6.14,1.88,9.6,8.39,7.71,14.54-.29.93-.69,1.82-1.2,2.66h0Z"/>
+              <polygon fill="#fff" points="406.16 149.01 374.93 149.01 374.93 117.77 349.2 117.77 349.2 149.01 317.97 149.01 317.97 174.73 349.2 174.73 349.2 205.97 374.93 205.97 374.93 174.73 406.16 174.73 406.16 149.01"/>
+            </svg>
             <span>WhatsApp Business</span>
           </button>
         </div>
@@ -806,6 +821,117 @@
             });
         }
       }
+
+      /* --- Smart WhatsApp Form Handling --- */
+      $(document).ready(function () {
+        const phoneNumber = "919574720006";
+
+        function isMobileDevice() {
+          const userAgent = navigator.userAgent || navigator.vendor || window.opera || "";
+          const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i;
+          return mobileRegex.test(userAgent) || (window.innerWidth <= 768);
+        }
+
+        function validateForm() {
+          const form = document.getElementById("contactForm");
+          if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return false;
+          }
+          return true;
+        }
+
+        function constructWhatsAppMessage() {
+          const name = $("#UserName").val().trim();
+          const phone = $("#PhoneNo").val().trim();
+          const email = $("#Email").val().trim();
+          const company = $("#Company").val().trim();
+          const subject = $("#Subject").val().trim();
+          const message = $("#MessageBox").val().trim();
+
+          let msg = `Hello Asha Tensile Structures,\n\nI would like to make an inquiry:\n`;
+          msg += `*Name:* ${name}\n`;
+          msg += `*Phone:* ${phone}\n`;
+          msg += `*Email:* ${email}\n`;
+          if (company) {
+            msg += `*Company:* ${company}\n`;
+          }
+          if (subject) {
+            msg += `*Subject:* ${subject}\n`;
+          }
+          msg += `*Message:* ${message}`;
+
+          return msg;
+        }
+
+        function resetContactForm() {
+          const form = document.getElementById("contactForm");
+          if (form) {
+            form.reset();
+            form.classList.remove("was-validated");
+          }
+        }
+
+        function openWhatsApp(targetType = "standard") {
+          if (!validateForm()) return;
+
+          const message = constructWhatsAppMessage();
+          const encodedMessage = encodeURIComponent(message);
+
+          if (targetType === "business") {
+            const isAndroid = /Android/i.test(navigator.userAgent || "");
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+
+            if (isAndroid) {
+              // Direct Android Intent targeting WhatsApp Business package
+              window.location.href = `intent://send?phone=${phoneNumber}&text=${encodedMessage}#Intent;scheme=smsto;package=com.whatsapp.w4b;end`;
+            } else if (isIOS) {
+              // iOS URL scheme for WhatsApp (or WhatsApp Business)
+              window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+            } else {
+              // Fallback for universal API
+              window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, "_blank");
+            }
+            resetContactForm();
+            return;
+          }
+
+          // Dynamic detection for web vs mobile api for standard WhatsApp
+          const baseUrl = isMobileDevice()
+            ? "https://api.whatsapp.com/send"
+            : "https://web.whatsapp.com/send";
+
+          const whatsappUrl = `${baseUrl}?phone=${phoneNumber}&text=${encodedMessage}`;
+          window.open(whatsappUrl, "_blank");
+          resetContactForm();
+        }
+
+        // Desktop / standard form submission
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault();
+          openWhatsApp("standard");
+        });
+
+        // Mobile modal buttons (form validates, closes modal, opens WhatsApp and resets form)
+        $("#whatsappStandard").on("click", function () {
+          if (validateForm()) {
+            const modalEl = document.getElementById("whatsappModal");
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            if (modal) modal.hide();
+            openWhatsApp("standard");
+          }
+        });
+
+        $("#whatsappBusiness").on("click", function () {
+          if (validateForm()) {
+            const modalEl = document.getElementById("whatsappModal");
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            if (modal) modal.hide();
+            openWhatsApp("business");
+          }
+        });
+      });
     </script>
+    <script src="js/floating-action.js"></script>
   </body>
 </html>
