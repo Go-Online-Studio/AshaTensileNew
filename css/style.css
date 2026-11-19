@@ -3026,7 +3026,6 @@ figure {
 /* Phone Calling FAB */
 .floating-action-buttons .fab-call {
   background: #2563eb;
-  border: 3px solid #ffffff;
   color: #ffffff;
 }
 

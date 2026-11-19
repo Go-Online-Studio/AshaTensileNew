@@ -455,6 +455,10 @@
   .swiper-button-prev{
     display: none !important;
   }
+
+  .options button{
+    flex-grow: 1;
+  }
 }
 
 @media (max-width: 991.98px) {

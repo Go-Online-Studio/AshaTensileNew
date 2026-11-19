@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
    <meta charset="UTF-8" />
@@ -184,7 +184,7 @@
           <h2 class="fourthH">Send Us a Message</h2>
           <p class="formSubtitle">Fill out the form below and our team will get back to you ASAP.</p>
           
-          <form class="contactForm needs-validation" novalidate id="contactForm">
+          <form class="contactForm needs-validation" novalidate id="contactForm" onsubmit="event.preventDefault(); return false;">
             <div class="row g-3">
               <!-- Full Name -->
               <div class="col-md-6">
@@ -198,7 +198,8 @@
               <!-- Phone Number -->
               <div class="col-md-6">
                 <label for="PhoneNo" class="form-label">Mobile Number <span class="required">*</span></label>
-                <input type="tel" class="form-control formInput" id="PhoneNo" name="PhoneNo" placeholder="Your Number" pattern="[0-9+\s-()]+" required>
+                <input type="tel" class="form-control formInput" id="PhoneNo" name="PhoneNo"
+       placeholder="Your Number" pattern="[0-9+\s\(\)\-]+" required>
                 <div class="invalid-feedback">
                   Please provide a valid phone number.
                 </div>
@@ -222,7 +223,7 @@
               <!-- Subject -->
               <div class="col-12">
                 <label for="Subject" class="form-label">Subject <span class="required">*</span></label>
-                <input type="text" class="form-control formInput" id="Subject" name="Subject" placeholder="Inquiry about subsea thrusters" required>
+                <input type="text" class="form-control formInput" id="Subject" name="Subject" placeholder="e.g. Tensile Canopy / Car Parking Structure / Resort Tent" required>
                 <div class="invalid-feedback">
                   Please enter a subject.
                 </div>
@@ -232,25 +233,36 @@
               <!-- Message -->
               <div class="col-12">
                 <label for="MessageBox" class="form-label">Your Message <span class="required">*</span></label>
-                <textarea class="form-control formInput" id="MessageBox" name="MessageBox" rows="5" placeholder="Tell us about your project requirements, technical specifications, or any questions you have..." required></textarea>
+                <textarea class="form-control formInput" id="MessageBox" name="MessageBox" rows="5" placeholder="Tell us about your project requirements, dimensions, location, or questions..." required></textarea>
                 <div class="invalid-feedback">
                   Please provide a message.
                 </div>
               </div>
 
+              <!-- Form Status / Feedback Alert (Loading & Sent status) -->
+              <div class="col-12" id="formStatusWrapper" style="display: none;">
+                <div id="formStatusAlert" class="alert d-flex align-items-center gap-2 mb-0 py-2 px-3" role="alert" style="font-size: 14px; border-radius: 6px;">
+                  <span id="formStatusSpinner" class="spinner-border spinner-border-sm flex-shrink-0" role="status" aria-hidden="true" style="display: none;"></span>
+                  <span id="formStatusIcon" class="flex-shrink-0"></span>
+                  <span id="formStatusText"></span>
+                </div>
+              </div>
+
               <!-- Mobile WhatsApp Button (Shows on Mobile Only) -->
               <div class="col-12 d-block d-md-none">
-                <button type="button" class="btn btnCommon w-100" data-bs-toggle="modal" data-bs-target="#whatsappModal">
-                  <span>Choose WhatsApp</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                <button type="button" class="btn btnCommon w-100 d-flex align-items-center justify-content-center gap-2" id="mobileChooseWhatsAppBtn">
+                  <span class="btn-text">Choose WhatsApp</span>
+                  <span class="spinner-border spinner-border-sm d-none btn-spinner" role="status" aria-hidden="true"></span>
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
                 </button>
               </div>
 
               <!-- Desktop Submit Button (Shows on Desktop Only) -->
               <div class="col-12 d-none d-md-block">
-                <button type="submit" class="btn btnCommon" id="desktopBtn">
-                  <span>Send Message</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button type="button" class="btn btnCommon d-flex align-items-center gap-2" id="desktopBtn">
+                  <span class="btn-text">Send Message</span>
+                  <span class="spinner-border spinner-border-sm d-none btn-spinner" role="status" aria-hidden="true"></span>
+                  <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -315,8 +327,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="options d-flex gap-3 justify-content-center p-2">
-          <button id="whatsappStandard" type="button" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp" style="border-radius:8px;font-weight:500;">
+        <div class="options d-flex flex-wrap gap-3 justify-content-center p-2">
+          <button id="whatsappStandard" type="button" class="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp" style="border-radius:8px;font-weight:500;">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 176 176">
               <g data-name="Layer 2">
                 <g data-name="09.whatsapp">
@@ -330,7 +342,7 @@
             </svg>
             <span>WhatsApp</span>
           </button>
-          <button id="whatsappBusiness" type="button" class="btn btn-outline-success d-flex align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp Business" style="border-radius:8px;font-weight:500;">
+          <button id="whatsappBusiness" type="button" class="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 px-3 py-2" aria-label="Send via WhatsApp Business" style="border-radius:8px;font-weight:500;">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 512 512">
               <circle fill="#29a71a" cx="256" cy="256" r="256"/>
               <path fill="#fff" d="M410.28,217.47h-35.69c13.39,42.74,3.13,91.26-30.71,125.1-37.78,37.69-95.4,47.05-143.18,23.28l-11.17-5.53-49.14,11.64.15-.61,10.18-49.46-5.47-10.79c-24.42-47.97-15.19-106.2,22.87-144.26,37.8-37.79,93.88-46.15,139.77-25.08v-37.03c-55.32-19.06-119.13-6.67-163.52,37.28-49.04,48.56-61.09,123.25-29.81,184.77l-16.84,81.77c-.36,1.65,0,3.37.96,4.74,1.43,2.12,4.03,3.13,6.51,2.54l80.15-19c78.5,39.02,173.76,7.01,212.77-71.49,17.02-34.23,20.72-72.42,12.17-107.87Z"/>
@@ -344,159 +356,6 @@
     </div>
   </div>
 </div>
-
-    
-    <!-- banner start -->
-    <!-- <section id="headBelowContent" class="contactBanner">   
-      <img  class="desktopImg d-none d-md-block" src="image/Chevron-Renaissance-banner.webp" alt="tensile structures">  
-      <img  class=" mobileImg d-block d-md-none" src="image/contactMob.webp" alt="tensile structures">  
-    </section> -->
-
-    <!-- banner start End-->
-
-    <!-- contact Form and menu section start -->
-    <!-- <section class="contactFormMenu defaultPadding">
-      <div class="container-fluid custom">
-        <h2 class="secH">Get In Touch</h2>
-        <p style="text-align:center;color:var(--textGrey);margin-top:-16px;margin-bottom:0;">We'd love to hear about your project — reach out and let's build something great together.</p>
-        <div class="row mt-5 gy-5">
-          <div class="col-md-4">
-            <div class="sidePannel">
-           
-              <a class="colBrand" href="index.html">
-                <img src="image/White_ASHA TENSILE.png" alt="Asha Tensile Logo" style="max-width:160px;" />
-              </a>
-
-              <p style="color:#7fb0c9;font-size:13px;line-height:1.7;margin-top:16px;margin-bottom:28px;">
-                Market leaders in tensile membrane structures — designing, engineering, and installing for 40+ years.
-              </p>
-
-              
-              <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px;">
-                <a href="tel:+919574720006" style="display:flex;gap:14px;align-items:center;background:rgba(255,255,255,0.07);border-radius:6px;padding:14px 16px;border-left:3px solid var(--AccentColour);text-decoration:none;">
-                  <div style="width:38px;height:38px;background:var(--AccentColour);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                    <i class="fa-solid fa-phone" style="color:#fff;font-size:14px;"></i>
-                  </div>
-                  <div>
-                    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#7fb0c9;margin-bottom:3px;">Phone</div>
-                    <div style="color:#fff;font-weight:600;font-size:14px;">+91 957 472 0006</div>
-                  </div>
-                </a>
-                <a href="mailto:info@ashatensilestructures.com" style="display:flex;gap:14px;align-items:center;background:rgba(255,255,255,0.07);border-radius:6px;padding:14px 16px;border-left:3px solid var(--HoverBlue);text-decoration:none;">
-                  <div style="width:38px;height:38px;background:var(--HoverBlue);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                    <i class="fa-solid fa-envelope" style="color:#fff;font-size:14px;"></i>
-                  </div>
-                  <div>
-                    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#7fb0c9;margin-bottom:3px;">Email</div>
-                    <div style="color:#c8d8e8;font-weight:600;font-size:13px;">info@ashatensilestructures.com</div>
-                  </div>
-                </a>
-                <a href="https://maps.app.goo.gl/WmkyZst3uYnZ6uSUA" target="_blank" style="display:flex;gap:14px;align-items:center;background:rgba(255,255,255,0.07);border-radius:6px;padding:14px 16px;border-left:3px solid #007f75;text-decoration:none;">
-                  <div style="width:38px;height:38px;background:#007f75;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                    <i class="fa-solid fa-location-dot" style="color:#fff;font-size:14px;"></i>
-                  </div>
-                  <div>
-                    <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#7fb0c9;margin-bottom:3px;">Address</div>
-                    <div style="color:#b0c8df;font-size:12px;line-height:1.5;">Akashvani, 1734 Chitrakut Hos. Soc., Makarpura Rd, Vadodara, Gujarat 390010</div>
-                  </div>
-                </a>
-              </div>
-
-             
-              <div style="margin-bottom:28px;">
-                <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#7fb0c9;margin-bottom:12px;font-weight:700;">Follow Us</div>
-                <div class="sidePannelSocial" style="padding-left:0;">
-                  <a href="https://www.facebook.com/" title="Follow on Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                  <a href="https://www.instagram.com/" title="Follow on Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                  <a href="https://www.linkedin.com/" title="Follow on LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="https://www.youtube.com/" title="Follow on YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                  <a href="https://in.pinterest.com/" title="Follow on Pinterest" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
-                </div>
-              </div>
-
-             
-              <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#7fb0c9;margin-bottom:12px;font-weight:700;">Why Choose Us</div>
-              <div style="display:flex;flex-direction:column;gap:10px;">
-                <div style="display:flex;gap:12px;align-items:center;background:rgba(0,180,166,0.1);border-radius:6px;padding:12px 14px;">
-                  <i class="fa-solid fa-award" style="color:var(--AccentColour);font-size:18px;flex-shrink:0;"></i>
-                  <div style="color:#c8d8e8;font-size:13px;font-weight:600;">40+ Years of Excellence</div>
-                </div>
-                <div style="display:flex;gap:12px;align-items:center;background:rgba(0,180,166,0.1);border-radius:6px;padding:12px 14px;">
-                  <i class="fa-solid fa-gear" style="color:var(--AccentColour);font-size:18px;flex-shrink:0;"></i>
-                  <div style="color:#c8d8e8;font-size:13px;font-weight:600;">End-to-End Engineering</div>
-                </div>
-                <div style="display:flex;gap:12px;align-items:center;background:rgba(0,180,166,0.1);border-radius:6px;padding:12px 14px;">
-                  <i class="fa-solid fa-truck-fast" style="color:var(--AccentColour);font-size:18px;flex-shrink:0;"></i>
-                  <div style="color:#c8d8e8;font-size:13px;font-weight:600;">On-Time Delivery Guarantee</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-8 mainFormSection">
-            <h2 class="fourthH">Enquire Online</h2>
-            <p class="bodySmall"> Contact Asha Tensile Structures via the form below to discuss your project with us. </p>
-            <p class="bodySmall"> " <span class="red">*</span>" indicates required field </p>
-          
-            <form class="row g-3 needs-validation" id="contactForm" novalidate>
-              <div class="col-12">
-                <label for="validationCustom01" class="form-label">Your Name <span class="red"> *</span>
-                </label>
-                <input type="text" class="form-control" id="validationCustom01" required />
-                <div class="invalid-feedback">Please enter your name</div>
-              </div>
-              <div class="col-12">
-                <label for="validationCustom02" class="form-label">Company</label>
-                <input type="text" class="form-control" id="validationCustom02" />
-              </div>
-              <div class="col-12">
-                <label for="validationCustom03" class="form-label">Phone <span class="red"> *</span>
-                </label>
-                <input type="number" class="form-control" id="validationCustom03" required />
-                <div class="invalid-feedback">Please provide your Number.</div>
-              </div>
-              <div class="col-12">
-                <label for="validationCustomUsername" class="form-label">Email <span class="red"> *</span>
-                </label>
-                <div class="input-group has-validation">
-                  <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
-                  <div class="invalid-feedback">Please enter your Email.</div>
-                </div>
-              </div>
-              <div class="col-12">
-                <label for="LocationValidate" class="form-label">Location <span class="red"> *</span>
-                </label>
-                <input type="text" class="form-control" id="LocationValidate" required />
-                <div class="invalid-feedback">Please enter your Location.</div>
-              </div>
-              <div class="col-12">
-                <label for="validationCustom04" class="form-label">How Did You Hear About ASHA TENSILE? <span class="red"> *</span>
-                </label>
-                <select class="form-select" id="validationCustom04" required>
-                  <option selected disabled value="">Choose...</option>
-                  <option>Magazine Article / Advertisement</option>
-                  <option>Specified by Architect or Developer</option>
-                  <option>Have Worked With Asha Tensile Before</option>
-                  <option>Product Sticker / Branding</option>
-                  <option>Referred To By Another Customer</option>
-                </select>
-                <div class="invalid-feedback">Please select an option.</div>
-              </div>
-              <div class="mb-3 col-12">
-                <label for="validationTextarea" class="form-label">Enquiry / Message <span class="red"> *</span>
-                </label>
-                <textarea class="form-control" id="validationTextarea" rows="5" cols="50" required></textarea>
-                <div class="invalid-feedback"> Please enter a message in the textarea. </div>
-              </div>
-              <div class="col-12">
-                <button class="btnCommon col-12" type="submit"> SUBMIT </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- contact Form and menu section end -->
 
 
    <!-- FAQ section start  -->
@@ -822,9 +681,18 @@
         }
       }
 
-      /* --- Smart WhatsApp Form Handling --- */
+      /* --- Smart WhatsApp & Google Sheets Form Handling --- */
       $(document).ready(function () {
+        // =========================================================================
+        // CONFIGURATION
+        // =========================================================================
+        // 1. WhatsApp Contact Phone Number (country code + number, without '+' or spaces)
         const phoneNumber = "919574720006";
+
+        // 2. Google Apps Script Web App Deployment URL
+        // Replace with your deployed Web App URL from Google Sheets
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOFNCLoqJr-ZPTHFWtPobxbIrptFO53DP9adIPLVcIaNLH4pvOSETXGfFHe5yO_Om8/exec";
+        // =========================================================================
 
         function isMobileDevice() {
           const userAgent = navigator.userAgent || navigator.vendor || window.opera || "";
@@ -836,9 +704,84 @@
           const form = document.getElementById("contactForm");
           if (!form.checkValidity()) {
             form.classList.add("was-validated");
+            const firstInvalid = form.querySelector(":invalid");
+            if (firstInvalid) firstInvalid.focus();
             return false;
           }
+          form.classList.remove("was-validated");
+          hideStatus();
           return true;
+        }
+
+        // Auto-remove error message as soon as user types/corrects inputs
+        $("#contactForm input, #contactForm textarea").on("input change", function () {
+          const form = document.getElementById("contactForm");
+          if (form && form.checkValidity()) {
+            form.classList.remove("was-validated");
+            hideStatus();
+          }
+        });
+
+        let statusTimeout = null;
+        function showStatus(message, type = "info", showSpinner = false) {
+          if (statusTimeout) clearTimeout(statusTimeout);
+          const wrapper = $("#formStatusWrapper");
+          const alertBox = $("#formStatusAlert");
+          const sp = $("#formStatusSpinner");
+          const txt = $("#formStatusText");
+          const icon = $("#formStatusIcon");
+
+          alertBox.removeClass("alert-info alert-success alert-danger alert-warning");
+          alertBox.addClass("alert-" + type);
+
+          txt.text(message);
+
+          if (showSpinner) {
+            sp.show();
+            icon.html("");
+          } else {
+            sp.hide();
+            if (type === "success") {
+              icon.html('<i class="fa-solid fa-circle-check text-success"></i>');
+            } else if (type === "danger") {
+              icon.html('<i class="fa-solid fa-circle-exclamation text-danger"></i>');
+            } else {
+              icon.html("");
+            }
+          }
+
+          wrapper.slideDown(200);
+        }
+
+        function hideStatus() {
+          $("#formStatusWrapper").slideUp(200);
+        }
+
+        function setFormBusy(isBusy) {
+          const deskBtn = $("#desktopBtn");
+          const mobBtn = $("#mobileChooseWhatsAppBtn");
+
+          if (isBusy) {
+            deskBtn.prop("disabled", true);
+            mobBtn.prop("disabled", true);
+            deskBtn.find(".btn-spinner").removeClass("d-none");
+            deskBtn.find(".btn-text").text("Submitting...");
+            deskBtn.find(".btn-icon").addClass("d-none");
+
+            mobBtn.find(".btn-spinner").removeClass("d-none");
+            mobBtn.find(".btn-text").text("Submitting...");
+            mobBtn.find(".btn-icon").addClass("d-none");
+          } else {
+            deskBtn.prop("disabled", false);
+            mobBtn.prop("disabled", false);
+            deskBtn.find(".btn-spinner").addClass("d-none");
+            deskBtn.find(".btn-text").text("Send Message");
+            deskBtn.find(".btn-icon").removeClass("d-none");
+
+            mobBtn.find(".btn-spinner").addClass("d-none");
+            mobBtn.find(".btn-text").text("Choose WhatsApp");
+            mobBtn.find(".btn-icon").removeClass("d-none");
+          }
         }
 
         function constructWhatsAppMessage() {
@@ -872,63 +815,150 @@
           }
         }
 
-        function openWhatsApp(targetType = "standard") {
-          if (!validateForm()) return;
+        // Post data to Google Apps Script Web App
+async function saveToGoogleSheet(payload) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 10000);
 
+  try {
+    const res = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+      redirect: "follow",
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+    const data = await res.json();
+    return { success: data.result === "success", data: data };
+  } catch (err) {
+    clearTimeout(timeoutId);
+    console.error("Google Sheets save error/timeout:", err);
+    return { success: false, error: err };
+  }
+}
+
+        // Unified submit function (Sheet first -> WhatsApp next -> Reset)
+        async function handleFormSubmit(targetType = "standard") {
+          if (!validateForm()) {
+            showStatus("Please fill in all required fields marked with *.", "danger");
+            return;
+          }
+
+          const isMob = isMobileDevice();
+
+          // User stays on website while saving
+
+          setFormBusy(true);
+          showStatus("Saving enquiry to Google Sheets...", "info", true);
+
+          // Collect form fields
+          const payload = {
+            timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+            name: $("#UserName").val().trim(),
+            phone: $("#PhoneNo").val().trim(),
+            email: $("#Email").val().trim(),
+            company: $("#Company").val().trim() || "N/A",
+            subject: $("#Subject").val().trim(),
+            message: $("#MessageBox").val().trim(),
+            whatsappType: targetType === "business" ? "WhatsApp Business (Mobile)" : (isMob ? "WhatsApp Standard (Mobile)" : "WhatsApp Web (Desktop)"),
+            pageUrl: window.location.href
+          };
+
+         // 1. Send data to Google Sheets FIRST
+          const saved = await saveToGoogleSheet(payload);
+
+          // 2. Show real status
+          if (saved.success) {
+            showStatus("✓ Enquiry saved successfully! Opening WhatsApp...", "success", false);
+          } else {
+            showStatus("Could not save to sheet, but opening WhatsApp so your message still reaches us...", "warning", false);
+          }
+
+          // 3. Construct WhatsApp Message & URL
           const message = constructWhatsAppMessage();
           const encodedMessage = encodeURIComponent(message);
 
+          let whatsappUrl = "";
           if (targetType === "business") {
             const isAndroid = /Android/i.test(navigator.userAgent || "");
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || "");
 
             if (isAndroid) {
-              // Direct Android Intent targeting WhatsApp Business package
-              window.location.href = `intent://send?phone=${phoneNumber}&text=${encodedMessage}#Intent;scheme=smsto;package=com.whatsapp.w4b;end`;
+              whatsappUrl = `intent://send?phone=${phoneNumber}&text=${encodedMessage}#Intent;scheme=smsto;package=com.whatsapp.w4b;end`;
             } else if (isIOS) {
-              // iOS URL scheme for WhatsApp (or WhatsApp Business)
-              window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+              whatsappUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
             } else {
-              // Fallback for universal API
-              window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, "_blank");
+              whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
             }
-            resetContactForm();
-            return;
+          } else {
+            const baseUrl = isMob
+              ? "https://api.whatsapp.com/send"
+              : "https://web.whatsapp.com/send";
+            whatsappUrl = `${baseUrl}?phone=${phoneNumber}&text=${encodedMessage}`;
           }
 
-          // Dynamic detection for web vs mobile api for standard WhatsApp
-          const baseUrl = isMobileDevice()
-            ? "https://api.whatsapp.com/send"
-            : "https://web.whatsapp.com/send";
+          // 4. Open WhatsApp ONLY after Google Sheets save is complete
+          setTimeout(() => {
+            if (targetType === "business" || isMob) {
+              window.location.href = whatsappUrl;
+            } else {
+              const w = window.open(whatsappUrl, "_blank");
+              if (!w || w.closed || typeof w.closed === "undefined") {
+                window.location.href = whatsappUrl;
+              }
+            }
 
-          const whatsappUrl = `${baseUrl}?phone=${phoneNumber}&text=${encodedMessage}`;
-          window.open(whatsappUrl, "_blank");
-          resetContactForm();
+            // 5. Reset form and controls
+            resetContactForm();
+            setFormBusy(false);
+
+            // Auto-hide success alert after 6 seconds
+            statusTimeout = setTimeout(() => {
+              hideStatus();
+            }, 6000);
+          }, 600);
         }
 
-        // Desktop / standard form submission
-        $("#contactForm").on("submit", function (e) {
+        // Desktop form submission via button click or Enter key
+        $("#desktopBtn").on("click", function (e) {
           e.preventDefault();
-          openWhatsApp("standard");
+          e.stopPropagation();
+          handleFormSubmit("standard");
         });
 
-        // Mobile modal buttons (form validates, closes modal, opens WhatsApp and resets form)
-        $("#whatsappStandard").on("click", function () {
-          if (validateForm()) {
-            const modalEl = document.getElementById("whatsappModal");
-            const modal = bootstrap.Modal.getInstance(modalEl);
-            if (modal) modal.hide();
-            openWhatsApp("standard");
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          handleFormSubmit("standard");
+          return false;
+        });
+
+        // Mobile button: validate FIRST, then open modal if valid
+        $("#mobileChooseWhatsAppBtn").on("click", function () {
+          if (!validateForm()) {
+            showStatus("Please fill in all required fields marked with *.", "danger");
+            return;
           }
+          hideStatus();
+          const modalEl = document.getElementById("whatsappModal");
+          const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+          modal.show();
+        });
+
+        // Mobile modal buttons
+        $("#whatsappStandard").on("click", function () {
+          const modalEl = document.getElementById("whatsappModal");
+          const modal = bootstrap.Modal.getInstance(modalEl);
+          if (modal) modal.hide();
+          handleFormSubmit("standard");
         });
 
         $("#whatsappBusiness").on("click", function () {
-          if (validateForm()) {
-            const modalEl = document.getElementById("whatsappModal");
-            const modal = bootstrap.Modal.getInstance(modalEl);
-            if (modal) modal.hide();
-            openWhatsApp("business");
-          }
+          const modalEl = document.getElementById("whatsappModal");
+          const modal = bootstrap.Modal.getInstance(modalEl);
+          if (modal) modal.hide();
+          handleFormSubmit("business");
         });
       });
     </script>
