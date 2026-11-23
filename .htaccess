@@ -13,19 +13,20 @@ AddDefaultCharset UTF-8
     RewriteBase /
 
     # 1. Redirect legacy URL with trailing space to clean URL
-    RewriteRule ^architecturalMembraneIntroduction\s*\.html$ https://www.ashatensilestructures.in/architecturalMembraneIntroduction.html [R=301,L]
+    RewriteRule ^architecturalMembraneIntroduction\s*\.html$ https://ashatensilestructures.com/architecturalMembraneIntroduction.html [R=301,L]
 
     # 2. Enforce HTTPS
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # 3. Enforce Preferred WWW Canonical Domain
-    RewriteCond %{HTTP_HOST} ^ashatensilestructures\.in$ [NC]
-    RewriteRule ^(.*)$ https://www.ashatensilestructures.in/$1 [L,R=301]
+    # 3. Enforce Canonical Domain (redirect www to non-www and legacy .in to .com)
+    RewriteCond %{HTTP_HOST} ^www\.ashatensilestructures\.com$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^(www\.)?ashatensilestructures\.in$ [NC]
+    RewriteRule ^(.*)$ https://ashatensilestructures.com/$1 [L,R=301]
 
     # 4. Normalize index.html to root for homepage
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-    RewriteRule ^index\.html$ https://www.ashatensilestructures.in/ [R=301,L]
+    RewriteRule ^index\.html$ https://ashatensilestructures.com/ [R=301,L]
 </IfModule>
 
 # Custom 404 Error Page

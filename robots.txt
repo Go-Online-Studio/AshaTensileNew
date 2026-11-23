@@ -1,5 +1,5 @@
 # Sitemap
-Sitemap: https://www.ashatensilestructures.in/sitemap.xml
+Sitemap: https://ashatensilestructures.com/sitemap.xml
 
 # 1. OpenAI (ChatGPT Search & Training Models)
 User-agent: GPTBot
